@@ -1,0 +1,20 @@
+<div class="p-2 m-2 border">
+  <div class="d-flex">
+    <h1>Estudios</h1>
+    <button class="btn btn-primary">Agregar</button>
+  </div>
+  <div *ngFor="let study of data.education" class="d-flex container-fluid">
+    <div class="d-flex align-items-center">
+      <img src="{{study.img}}" alt="{{study.school}}">
+    </div>
+    <div>
+      <h1>{{study.school}}</h1>
+      <div class="d-flex">
+        <p class="me-2">{{study.title}}</p>
+        <p>{{study.career}}</p>
+      </div>
+      <p>{{study.start}} - {{study.end}}</p>
+    </div>
+    <button class="btn btn-primary">Editar</button>
+  </div>
+</div>

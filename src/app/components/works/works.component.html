@@ -1,0 +1,19 @@
+<div class="p-2 m-2 border">
+  <div class="d-flex">
+    <h1>Apps</h1>
+    <button class="btn btn-primary">Agregar</button>
+  </div>
+  <div *ngFor="let app of data.works" class="d-flex container-fluid">
+    <div class="d-flex align-items-center">
+      <img src="{{app.img}}" alt="{{app.name}}">
+    </div>
+    <div>
+      <h1>{{app.name}}</h1>
+      <div class="d-flex">
+        <p class="me-2">{{app.description}}</p>
+        <p>{{app.link}}</p>
+      </div>
+    </div>
+    <button class="btn btn-primary">Editar</button>
+  </div>
+</div>

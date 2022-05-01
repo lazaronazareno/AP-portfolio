@@ -1,0 +1,19 @@
+<div class="p-2 m-2 border">
+  <div class="d-flex">
+    <h1>Experiencia</h1>
+    <button class="btn btn-primary">Agregar</button>
+  </div>
+  <div *ngFor="let exps of data.experience" class="d-flex container-fluid">
+    <div class="d-flex align-items-center">
+      <img src="{{exps.img}}" alt="{{exps.company}}">
+    </div>
+    <div>
+      <h1>{{exps.position}}</h1>
+      <div class="d-flex">
+        <p class="me-2">{{exps.company}}</p>
+        <p>{{exps.mode}}</p>
+      </div>
+    </div>
+    <button class="btn btn-primary">Editar</button>
+  </div>
+</div>

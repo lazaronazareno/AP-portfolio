@@ -1,0 +1,69 @@
+{
+  "name": "Lazaro Nazareno Vega Sanchez",
+  "backImg": "https://browsecat.net/sites/default/files/red-awesome-background-126468-728286-8162446.png",
+  "img": "https://lh3.googleusercontent.com/fife/AAWUweUkDnkrGeYrU4wYZpKLtKPwbGE12SDS5nGvcFRriv5ZZe0fN4hN8r_KXcHRz6w0T8omhI_FXL-9LjA6-jKEgfuSu0bmfS56QauT9rgFHyMnf0sAdNNTFS7v-MT-RiTTiQMV5Rf7e9VIGuZ4t0s5jEXFYLm5BFuiT2K4GYjlpF5WNehryvOcAxj9Eyk1gbiEoOjQCPhqE2G5X7-HjUHJnTi1b_nBR_bnqt1f25ZsaWSGX0fE5LfG5eDZcFgHJJ2zL2Iba1dJ5FWyJ0g9bYTGbCO-e4wBiPE7FjmBpsR4VblCc4PjopvbPMQ-vH1Yy1EeIM4n_77JaSHFcaovTeW_yv02jdiMu1qhNam69NonQXaEWcKknTOwPsQNE5RjsaQjWWaKNLYOPei-oBwS_nOeLBBLB2wT9u-c7eV-Fct6I0kFpc80IjuVqtPRoFSI2r4wB8c-Gw52IgrYrTaxj7M5Qa780rfYBQT4EIwL1sLTtdSAEZThVdiwZXqKik7-1bKf12UviZSCpWM6wz6WQVytJKQ2rYoYbdNTrcfuwbqQthiaSFXPIxZn5F7QXc4OFZBy1rT5e5JUaW7jP1RMs3IZQ20s991lPvbK1dm2JimeJc7ZGSTz3TnvB7V9Xp5h3lprEYDjmpDLSUWCoe1UxzZaZSMBamNjoeZ1jLubRkxSlsEP6H1p9yQDXROjdc1e0cNaRiYZNuItI-VXKa_rNqu0Xo6x4WFWtYspHR1u659LiL-EJbAjbyrnzBKvo9y_MAnYKO3RrEIQTdLihiI7TUg=w1360-h625",
+  "position":"Estudiante",
+  "ubication":"Buenos Aires",
+  "about":"Programador front-end jr",
+  "experience":[{
+    "position":"Desarrollador Front-End",
+    "company":"Alkemy",
+    "img":"",
+    "mode":"full-time",
+    "start":"8/21",
+    "end":"10/21"
+  }],
+  "education": [
+    {
+      "school":"Universidad de Buenos Aires",
+      "title":"Psicologia",
+      "img":"",
+      "career":"Licenciatura en psicologia",
+      "start":"2017",
+      "end":"2017"
+    },
+    {
+      "school":"Universidad de San Martín",
+      "title":"Economia y negocios",
+      "img":"",
+      "career":"Licenciatura en Turismo",
+      "start":"2016",
+      "end":"2016"
+    },
+    {
+      "school":"Universidad de Tres de Febrero",
+      "title":"Musica",
+      "img":"",
+      "career":"Licenciatura en Musica",
+      "start":"2015",
+      "end":"2016"
+    }
+  ],
+  "works": [
+    {
+      "name":"Superheroes app",
+      "description":"react app, challenge alkemy",
+      "img": "",
+      "link":"enlace"
+    },
+    {
+      "name":"Superheroes app",
+      "description":"react app, challenge alkemy",
+      "img": "",
+      "link":"enlace"
+    },
+    {
+      "name":"Superheroes app",
+      "description":"react app, challenge alkemy",
+      "img": "",
+      "link":"enlace"
+    },
+    {
+      "name":"Superheroes app",
+      "description":"react app, challenge alkemy",
+      "img": "",
+      "link":"enlace"
+    }
+  ]
+
+}
