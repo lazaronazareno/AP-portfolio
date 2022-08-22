@@ -1,16 +1,16 @@
 <div class="d-flex flex-column border p-2 m-2 profile">
-  <div class="h-50" [ngStyle]="{'background-image': 'url(' + data.backImg + ')'}"></div>
-  <div class="h-50 profile-img">
+  <div class="background-image" [ngStyle]="{'background-image': 'url(' + data.backImg + ')'}"></div>
+  <div class="profile-img">
     <img class="img rounded-circle" src="{{data.img}}" alt="{{data.name}}">
+  </div>
+  <div>
     <div class="d-flex align-items-baseline">
       <h1>{{data.name}}</h1>
       <p class="fs-4 mx-4">{{data.position}}</p>
       <p>{{data.ubication}}</p>
     </div>
-    <div>
-      <button class="btn btn-primary">Tengo interés en</button>
-      <button class="btn btn-light">Añadir seccion</button>
-      <button class="btn btn-light">Más</button>
-    </div>
+    <button class="btn btn-primary">Tengo interés en</button>
+    <button class="btn btn-light">Añadir seccion</button>
+    <button class="btn btn-light">Más</button>
   </div>
 </div>
