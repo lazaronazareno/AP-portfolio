@@ -1,0 +1,35 @@
+<h1 class="m-5">Registrarse</h1>
+<form [formGroup]="registerForm" class="m-5" (ngSubmit)="onSend($event)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" formControlName="email"
+      [ngClass]="{ 'is-invalid': Email?.errors && Email?.touched, 'is-valid': !Email?.errors && Email?.touched}"
+      class="form-control" id="exampleInputEmail1">
+    <div *ngIf="Email?.errors && Email?.touched">
+      <p *ngIf="Email?.hasError('required')" class="text-danger">El email es requerida</p>
+      <p *ngIf="Email?.hasError('email')" class="text-danger">El formato del email es invalido</p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+    <input type="password" formControlName="password" (change)="onPasswordChange()"
+      [ngClass]="{'is-invalid': Password.errors && Password.touched, 'is-valid': !Password.errors && Password.touched}"
+      class="form-control" id="exampleInputPassword1">
+    <div *ngIf="Password?.errors && Password?.touched">
+      <p *ngIf="Password?.hasError('required')" class="text-danger">La contraseña es requerida</p>
+      <p *ngIf="Password?.errors?.['minlength']" class="text-danger">La contraseña debe ser de 8 o más caracteres</p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Confirmar Contraseña</label>
+    <input type="password" formControlName="confirmPassword" (change)="onPasswordChange()"
+      [ngClass]="{'is-invalid': ConfirmPassword.errors && ConfirmPassword.touched, 'is-valid': !ConfirmPassword.errors && ConfirmPassword.touched}"
+      class="form-control" id="exampleInputPassword1">
+    <div *ngIf="ConfirmPassword?.errors && ConfirmPassword?.touched">
+      <p *ngIf="ConfirmPassword?.hasError('required')" class="text-danger">La contraseña es requerida</p>
+      <p *ngIf="ConfirmPassword?.errors?.['minlength']" class="text-danger">La contraseña debe ser de 8 o más caracteres</p>
+      <span *ngIf="ConfirmPassword.hasError('mismatch')" class="text-danger">Las contraseñas no coinciden</span>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-warning w-100">Registrar Datos</button>
+</form>

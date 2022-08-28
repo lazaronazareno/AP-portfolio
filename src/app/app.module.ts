@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -10,6 +10,12 @@ import { AbilitiesComponent } from './components/abilities/abilities.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { StudiesComponent } from './components/studies/studies.component';
 import { WorksComponent } from './components/works/works.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PortfolioService } from './services/portfolio.service';
+import { InterceptorService } from './services/interceptor.service';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +25,18 @@ import { WorksComponent } from './components/works/works.component';
     AbilitiesComponent,
     ExperienceComponent,
     StudiesComponent,
-    WorksComponent
+    WorksComponent,
+    LoginFormComponent,
+    PortfolioComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PortfolioService, {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
