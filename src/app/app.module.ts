@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PortfolioService } from './services/portfolio.service';
 import { InterceptorService } from './services/interceptor.service';
 import { RegisterComponent } from './components/register/register.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterComponent } from './components/register/register.component';
     WorksComponent,
     LoginFormComponent,
     PortfolioComponent,
-    RegisterComponent
+    RegisterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

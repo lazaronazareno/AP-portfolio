@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "FuturaMedium";
+  src: local("Futura"), url(../assets/fonts/futuraMBT.ttf) format("truetype");
+}
+@font-face {
+  font-family: "FuturaMediumCursive";
+  src: local("Futura"), url(../assets/fonts/futuraMCBT.ttf) format("truetype");
+}
+@font-face {
+  font-family: "FuturaMediumBold";
+  src: local("Futura"), url(../assets/fonts/FuturaMIB.ttf) format("truetype");
+}
+h1{
+  font-family: "FuturaMediumBold";
+}
+
+* {
+  font-family: "FuturaMedium";
+}
