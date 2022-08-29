@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
-import { AbilitiesComponent } from './components/abilities/abilities.component';
+import { StackComponent } from './components/stack/stack.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { StudiesComponent } from './components/studies/studies.component';
 import { WorksComponent } from './components/works/works.component';
@@ -23,7 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
     AppComponent,
     ProfileComponent,
     AboutMeComponent,
-    AbilitiesComponent,
+    StackComponent,
     ExperienceComponent,
     StudiesComponent,
     WorksComponent,
