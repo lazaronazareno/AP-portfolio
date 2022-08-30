@@ -1,13 +1,18 @@
 <div *ngIf="data" class="d-flex flex-column p-2 m-2 profile">
-  <div class="background-image d-flex h-100 justify-content-evenly align-items-center border-bottom border-warning" [ngStyle]="{'background-image': 'url(' + data.backImg + ')'}">
+  <div class="background-image d-flex h-100 justify-content-evenly align-items-center border-bottom border-warning" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
     <div class="profile-img d-flex align-items-center overflow-hidden justify-content-center">
-      <img class="img" src="{{data.img}}" alt="{{data.name}}">
+      <img class="img" src="{{data.photo_url}}" alt="{{data.name}}">
     </div>
     <div class="d-flex flex-column align-items-baseline">
-      <h1 class="border-bottom border-warning">{{data.name}}</h1>
-      <p class="fs-4">{{data.about}}</p>
-      <p class="fs-4">{{data.position}}</p>
-      <p>{{data.ubication}}</p>
+      <h1 class="border-bottom border-warning">{{data.name + " " +data.lastName}}</h1>
+      <p class="fs-4">{{data.about_me}}</p>
+      <p>{{data.nationality}}</p>
+      <p>{{data.tel}}</p>
+      <p>{{data.address}}</p>
+      <p>{{data.mail}}</p>
+      <p>{{data.ocupation}}</p>
+      <button class="btn btn-warning"><a href="{{data.repo_url}}">Github</a></button>
+      <button class="btn btn-warning"><a href="{{data.repo_url}}">Linkedin</a></button>
       <button class="btn btn-warning">Tengo interés en</button>
       <button class="btn btn-light">Añadir seccion</button>
       <button class="btn btn-light">Más</button>

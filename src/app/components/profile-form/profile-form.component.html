@@ -10,25 +10,43 @@
     </div>
   </div>
   <div class="mb-3">
-    <label for="Ubication" class="form-label">Ubicacion</label>
-    <input type="text" formControlName="Ubication"
-      [ngClass]="{ 'is-invalid': Ubication?.errors && Ubication?.touched, 'is-valid': !Ubication?.errors && Ubication?.touched}"
-      class="form-control" id="Ubication">
-    <div *ngIf="Ubication?.errors && Ubication?.touched">
-      <p *ngIf="Ubication?.hasError('required')" class="text-danger">El campo es requerido</p>
+    <label for="lastName" class="form-label">Apellido</label>
+    <input type="text" formControlName="lastName"
+      [ngClass]="{ 'is-invalid': LastName?.errors && LastName?.touched, 'is-valid': !LastName?.errors && LastName?.touched}"
+      class="form-control" id="lastName">
+    <div *ngIf="LastName?.errors && LastName?.touched">
+      <p *ngIf="LastName?.hasError('required')" class="text-danger">El nombre es requerido</p>
+    </div>
+  </div>
+<!--   <div class="mb-3">
+    <label for="aaa" class="form-label">apellido</label>
+    <input type="text" formControlName="aaa"
+      [ngClass]="{ 'is-invalid': aaa?.errors && aaa?.touched, 'is-valid': !aaa?.errors && aaa?.touched}"
+      class="form-control" id="aaa">
+    <div *ngIf="aaa?.errors && aaa?.touched">
+      <p *ngIf="aaa?.hasError('required')" class="text-danger">El nombre es requerido</p>
+    </div>
+  </div> -->
+  <div class="mb-3">
+    <label for="Address" class="form-label">Ubicacion</label>
+    <input type="text" formControlName="Address"
+      [ngClass]="{ 'is-invalid': Address?.errors && Address?.touched, 'is-valid': !Address?.errors && Address?.touched}"
+      class="form-control" id="Address">
+    <div *ngIf="Address?.errors && Address?.touched">
+      <p *ngIf="Address?.hasError('required')" class="text-danger">El campo es requerido</p>
     </div>
   </div>
   <div class="mb-3">
-    <label for="position" class="form-label">Ocupación</label>
-    <input type="text" formControlName="position"
-      [ngClass]="{ 'is-invalid': Position?.errors && Position?.touched, 'is-valid': !Position?.errors && Position?.touched}"
-      class="form-control" id="position">
-    <div *ngIf="Position?.errors && Position?.touched">
-      <p *ngIf="Position?.hasError('required')" class="text-danger">El nombre es requerido</p>
+    <label for="Ocupation" class="form-label">Ocupación</label>
+    <input type="text" formControlName="Ocupation"
+      [ngClass]="{ 'is-invalid': Ocupation?.errors && Ocupation?.touched, 'is-valid': !Ocupation?.errors && Ocupation?.touched}"
+      class="form-control" id="Ocupation">
+    <div *ngIf="Ocupation?.errors && Ocupation?.touched">
+      <p *ngIf="Ocupation?.hasError('required')" class="text-danger">El nombre es requerido</p>
     </div>
   </div>
   <div class="mb-3">
-    <label for="about" class="form-label">Nombre</label>
+    <label for="about" class="form-label">Sobre mí</label>
     <input type="text" formControlName="about"
       [ngClass]="{ 'is-invalid': About?.errors && About?.touched, 'is-valid': !About?.errors && About?.touched}"
       class="form-control" id="about">

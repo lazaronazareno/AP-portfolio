@@ -1,102 +1,118 @@
 {
-  "name": "Lazaro Nazareno Vega Sanchez",
-  "backImg": "https://browsecat.net/sites/default/files/red-awesome-background-126468-728286-8162446.png",
-  "img": "https://i.ibb.co/3RXvHPr/Lazaro-Vega-Sanchez.jpg",
-  "position":"Estudiante",
-  "ubication":"Buenos Aires",
-  "about":"Programador front-end jr",
+  "name": "Lazaro Nazareno",
+  "lastName": "Vega Sanchez",
+  "nationality" : "Argentina",
+  "tel":"11111111",
+  "address":"Buenos Aires",
+  "mail":"lazaronazareno@gmail.com",
+  "about_me":"Programador front-end jr",
+  "ocupation":"Estudiante",
+  "photo_url":"https://i.ibb.co/3RXvHPr/Lazaro-Vega-Sanchez.jpg",
+  "background_url":"https://browsecat.net/sites/default/files/red-awesome-background-126468-728286-8162446.png",
+  "repo_url":"url de repo",
+  "linkedin_url":"url de linkedin",
   "experience":[
                 {
-                "position":"Desarrollador Front-End",
+                "name":"Desarrollador Front-End",
                 "company":"Alkemy",
-                "img":"",
+                "description":"",
+                "photo_url":"",
                 "mode":"full-time",
-                "start":"8/21",
-                "end":"10/21"
+                "year_init":"8/21",
+                "year_end":"10/21"
                 },
                 {
-                  "position":"Desarrollador Front-End",
-                  "company":"Alkemy",
-                  "img":"",
-                  "mode":"full-time",
-                  "start":"8/21",
-                  "end":"10/21"
+                "name":"Desarrollador Front-End",
+                "company":"Alkemy",
+                "description":"",
+                "photo_url":"",
+                "mode":"full-time",
+                "year_init":"8/21",
+                "year_end":"10/21"
                 },
                 {
-                  "position":"Desarrollador Front-End",
-                  "company":"Alkemy",
-                  "img":"",
-                  "mode":"full-time",
-                  "start":"8/21",
-                  "end":"10/21"
+                "name":"Desarrollador Front-End",
+                "company":"Alkemy",
+                "description":"",
+                "photo_url":"",
+                "mode":"full-time",
+                "year_init":"8/21",
+                "year_end":"10/21"
                 },
                 {
-                  "position":"Desarrollador Front-End",
-                  "company":"Alkemy",
-                  "img":"",
-                  "mode":"full-time",
-                  "start":"8/21",
-                  "end":"10/21"
+                "name":"Desarrollador Front-End",
+                "company":"Alkemy",
+                "description":"",
+                "photo_url":"",
+                "mode":"full-time",
+                "year_init":"8/21",
+                "year_end":"10/21"
                 },
                 {
-                  "position":"Desarrollador Front-End",
-                  "company":"Alkemy",
-                  "img":"",
-                  "mode":"full-time",
-                  "start":"8/21",
-                  "end":"10/21"
+                "name":"Desarrollador Front-End",
+                "company":"Alkemy",
+                "description":"",
+                "photo_url":"",
+                "mode":"full-time",
+                "year_init":"8/21",
+                "year_end":"10/21"
                 }
 ],
   "education": [
                 {
                   "school":"Universidad de Buenos Aires",
-                  "title":"Psicologia",
-                  "img":"",
-                  "career":"Licenciatura en psicologia",
-                  "start":"2017",
-                  "end":"2017"
+                  "name":"Psicologia",
+                  "photo_url":"",
+                  "year_init":"2017",
+                  "year_end":"2017"
                 },
                 {
-                  "school":"Universidad de San Martín",
-                  "title":"Economia y negocios",
-                  "img":"",
-                  "career":"Licenciatura en Turismo",
-                  "start":"2016",
-                  "end":"2016"
+                  "school":"Universidad de Buenos Aires",
+                  "name":"Psicologia",
+                  "photo_url":"",
+                  "year_init":"2017",
+                  "year_end":"2017"
                 },
                 {
-                  "school":"Universidad de Tres de Febrero",
-                  "title":"Musica",
-                  "img":"",
-                  "career":"Licenciatura en Musica",
-                  "start":"2015",
-                  "end":"2016"
+                  "school":"Universidad de Buenos Aires",
+                  "name":"Psicologia",
+                  "photo_url":"",
+                  "year_init":"2017",
+                  "year_end":"2017"
                 }
   ],
   "works": [
                 {
                   "name":"Superheroes app",
                   "description":"react app, challenge alkemy",
-                  "img": "",
-                  "link":"enlace"
+                  "year_made": "",
+                  "photo_url": "enlace",
+                  "repo_url":"enlace",
+                  "deploy_url":"enlace"
                 },
                 {
                   "name":"Superheroes app",
                   "description":"react app, challenge alkemy",
-                  "img": "",
-                  "link":"enlace"
+                  "year_made": "",
+                  "photo_url": "enlace",
+                  "repo_url":"enlace",
+                  "deploy_url":"enlace"
                 },
                 {
                   "name":"Superheroes app",
                   "description":"react app, challenge alkemy",
-                  "img": "",
-                  "link":"enlace"
+                  "year_made": "",
+                  "photo_url": "enlace",
+                  "repo_url":"enlace",
+                  "deploy_url":"enlace"
                 },
                 {
                   "name":"Superheroes app",
                   "description":"react app, challenge alkemy",
-                  "img": "",
-                  "link":"enlace"
+                  "year_made": "",
+                  "photo_url": "enlace",
+                  "repo_url":"enlace",
+                  "deploy_url":"enlace"
                 }
   ],
   "stack" : [
