@@ -17,6 +17,11 @@ import { PortfolioService } from './services/portfolio.service';
 import { InterceptorService } from './services/interceptor.service';
 import { RegisterComponent } from './components/register/register.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ProfileFormComponent } from './components/profile-form/profile-form.component';
+import { StackFormComponent } from './components/stack-form/stack-form.component';
+import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
+import { StudiesFormComponent } from './components/studies-form/studies-form.component';
+import { WorksFormComponent } from './components/works-form/works-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { HeaderComponent } from './components/header/header.component';
     LoginFormComponent,
     PortfolioComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileFormComponent,
+    StackFormComponent,
+    ExperienceFormComponent,
+    StudiesFormComponent,
+    WorksFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 export class StackComponent implements OnInit {
   data:any;
 
-  constructor(private portfolioService: PortfolioService) {
+  constructor(private portfolioService: PortfolioService, private route:Router) {
    }
 
   ngOnInit(): void {
@@ -17,6 +18,10 @@ export class StackComponent implements OnInit {
     .subscribe(data => (
       this.data = data
     ))
+  }
+
+  onClick() {
+    this.route.navigate(['/stack-form'])
   }
 
 }
