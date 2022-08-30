@@ -1,4 +1,4 @@
-<div class="d-flex flex-column p-2 m-2 profile">
+<div *ngIf="data" class="d-flex flex-column p-2 m-2 profile">
   <div class="background-image d-flex h-100 justify-content-evenly align-items-center border-bottom border-warning" [ngStyle]="{'background-image': 'url(' + data.backImg + ')'}">
     <div class="profile-img d-flex align-items-center overflow-hidden justify-content-center">
       <img class="img" src="{{data.img}}" alt="{{data.name}}">

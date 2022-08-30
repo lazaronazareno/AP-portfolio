@@ -1,19 +1,17 @@
-<div class="p-2 m-2 border">
+<div *ngIf="data" class="p-2 m-2 border-bottom border-warning experience-container">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Experiencia</h1>
     <button class="btn btn-warning">Agregar</button>
   </div>
-  <div *ngFor="let exps of data.experience" class="d-flex container-fluid justify-content-between align-items-center">
-    <div class="d-flex align-items-center">
-      <img src="{{exps.img}}" alt="{{exps.company}}">
-    </div>
-    <div>
-      <h1>{{exps.position}}</h1>
-      <div class="d-flex">
-        <p class="me-2">{{exps.company}}</p>
-        <p>{{exps.mode}}</p>
+  <div class="card-group">
+    <div *ngFor="let exps of data.experience" class="card bg-dark text-center experience-item">
+      <img class="card-img-top" src="{{exps.img}}" alt="{{exps.company}}">
+      <div class="card-body">
+        <p class="card-title">{{exps.position}}</p>
+        <p class="me-2 card-text">{{exps.company}}</p>
+        <p class="card-text">{{exps.mode}}</p>
+        <button class="btn btn-warning">Editar</button>
       </div>
     </div>
-    <button class="btn btn-warning">Editar</button>
   </div>
 </div>

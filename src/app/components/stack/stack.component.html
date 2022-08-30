@@ -1,1 +1,5 @@
-<p>abilities works!</p>
+<div *ngIf="data" class="d-flex stack-container border-bottom border-warning justify-content-center align-items-center">
+  <div *ngFor="let stack of data.stack" class="stack-item d-flex justify-content-center">
+    <img src="{{stack.img}}" alt="{{stack.name}}">
+  </div>
+</div>

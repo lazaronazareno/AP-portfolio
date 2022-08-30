@@ -1,20 +1,18 @@
-<div class="p-2 m-2 border">
+<div *ngIf="data" class="p-2 m-2 border-bottom border-warning studies-container">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Estudios</h1>
     <button class="btn btn-warning">Agregar</button>
   </div>
-  <div *ngFor="let study of data.education" class="d-flex container-fluid justify-content-between align-items-center">
-    <div class="d-flex">
-      <img src="{{study.img}}" alt="{{study.school}}">
-    </div>
-    <div>
-      <h1>{{study.school}}</h1>
-      <div class="d-flex">
-        <p class="me-2">{{study.title}}</p>
-        <p>{{study.career}}</p>
+  <div class="card-group">
+    <div *ngFor="let study of data.education" class="card bg-dark text-center studies-item">
+      <img class="card-img-top" src="{{study.img}}" alt="{{study.school}}">
+      <div class="card-body">
+        <p class="card-title">{{study.school}}</p>
+        <p class="me-2 card-text">{{study.title}}</p>
+        <p class="card-text">{{study.career}}</p>
+        <p>{{study.start}} - {{study.end}}</p>
+        <button class="btn btn-warning">Editar</button>
       </div>
-      <p>{{study.start}} - {{study.end}}</p>
     </div>
-    <button class="btn btn-warning">Editar</button>
   </div>
 </div>

@@ -5,64 +5,124 @@
   "position":"Estudiante",
   "ubication":"Buenos Aires",
   "about":"Programador front-end jr",
-  "experience":[{
-    "position":"Desarrollador Front-End",
-    "company":"Alkemy",
-    "img":"",
-    "mode":"full-time",
-    "start":"8/21",
-    "end":"10/21"
-  }],
+  "experience":[
+                {
+                "position":"Desarrollador Front-End",
+                "company":"Alkemy",
+                "img":"",
+                "mode":"full-time",
+                "start":"8/21",
+                "end":"10/21"
+                },
+                {
+                  "position":"Desarrollador Front-End",
+                  "company":"Alkemy",
+                  "img":"",
+                  "mode":"full-time",
+                  "start":"8/21",
+                  "end":"10/21"
+                },
+                {
+                  "position":"Desarrollador Front-End",
+                  "company":"Alkemy",
+                  "img":"",
+                  "mode":"full-time",
+                  "start":"8/21",
+                  "end":"10/21"
+                },
+                {
+                  "position":"Desarrollador Front-End",
+                  "company":"Alkemy",
+                  "img":"",
+                  "mode":"full-time",
+                  "start":"8/21",
+                  "end":"10/21"
+                },
+                {
+                  "position":"Desarrollador Front-End",
+                  "company":"Alkemy",
+                  "img":"",
+                  "mode":"full-time",
+                  "start":"8/21",
+                  "end":"10/21"
+                }
+],
   "education": [
-    {
-      "school":"Universidad de Buenos Aires",
-      "title":"Psicologia",
-      "img":"",
-      "career":"Licenciatura en psicologia",
-      "start":"2017",
-      "end":"2017"
-    },
-    {
-      "school":"Universidad de San Martín",
-      "title":"Economia y negocios",
-      "img":"",
-      "career":"Licenciatura en Turismo",
-      "start":"2016",
-      "end":"2016"
-    },
-    {
-      "school":"Universidad de Tres de Febrero",
-      "title":"Musica",
-      "img":"",
-      "career":"Licenciatura en Musica",
-      "start":"2015",
-      "end":"2016"
-    }
+                {
+                  "school":"Universidad de Buenos Aires",
+                  "title":"Psicologia",
+                  "img":"",
+                  "career":"Licenciatura en psicologia",
+                  "start":"2017",
+                  "end":"2017"
+                },
+                {
+                  "school":"Universidad de San Martín",
+                  "title":"Economia y negocios",
+                  "img":"",
+                  "career":"Licenciatura en Turismo",
+                  "start":"2016",
+                  "end":"2016"
+                },
+                {
+                  "school":"Universidad de Tres de Febrero",
+                  "title":"Musica",
+                  "img":"",
+                  "career":"Licenciatura en Musica",
+                  "start":"2015",
+                  "end":"2016"
+                }
   ],
   "works": [
+                {
+                  "name":"Superheroes app",
+                  "description":"react app, challenge alkemy",
+                  "img": "",
+                  "link":"enlace"
+                },
+                {
+                  "name":"Superheroes app",
+                  "description":"react app, challenge alkemy",
+                  "img": "",
+                  "link":"enlace"
+                },
+                {
+                  "name":"Superheroes app",
+                  "description":"react app, challenge alkemy",
+                  "img": "",
+                  "link":"enlace"
+                },
+                {
+                  "name":"Superheroes app",
+                  "description":"react app, challenge alkemy",
+                  "img": "",
+                  "link":"enlace"
+                }
+  ],
+  "stack" : [
     {
-      "name":"Superheroes app",
-      "description":"react app, challenge alkemy",
-      "img": "",
-      "link":"enlace"
+      "name": "React",
+      "img" : "url de imagen"
     },
     {
-      "name":"Superheroes app",
-      "description":"react app, challenge alkemy",
-      "img": "",
-      "link":"enlace"
+      "name": "React",
+      "img" : "url de imagen"
     },
     {
-      "name":"Superheroes app",
-      "description":"react app, challenge alkemy",
-      "img": "",
-      "link":"enlace"
+      "name": "React",
+      "img" : "url de imagen"
     },
     {
-      "name":"Superheroes app",
-      "description":"react app, challenge alkemy",
-      "img": "",
-      "link":"enlace"
+      "name": "React",
+      "img" : "url de imagen"
+    },
+    {
+      "name": "React",
+      "img" : "url de imagen"
+    },
+    {
+      "name": "React",
+      "img" : "url de imagen"
     }
   ]
 

@@ -1,3 +1,14 @@
 * {
   font-family: "FuturaMedium";
 }
+
+.stack-container{
+  height: 50vh;
+  flex-flow: wrap;
+  padding: 10vh;
+}
+
+.stack-item{
+  height: 5vh;
+  width: 10vw;
+}
