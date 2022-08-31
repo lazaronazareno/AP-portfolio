@@ -2,13 +2,15 @@
   <div class="px-3 bg-dark text-white border-bottom border-warning">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <div class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">Inicio</div>
+        <div class="d-flex align-items-center my-2 my-lg-0 me-lg-auto">
+          <a [routerLink]="['/portfolio']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="home"></fa-icon>Inicio</a>
+        </div>
         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-          <li><a [routerLink]="['/profile']" [routerLinkActive]="['active']" class="nav-link text-light">Perfil</a></li>
-          <li><a [routerLink]="['/stack']" [routerLinkActive]="['active']" class="nav-link text-light">Tecnologias</a></li>
-          <li><a [routerLink]="['/experiences']" [routerLinkActive]="['active']" class="nav-link text-light">Experiencia</a></li>
-          <li><a [routerLink]="['/studies']" [routerLinkActive]="['active']" class="nav-link text-light">Estudios</a></li>
-          <li><a [routerLink]="['/works']" [routerLinkActive]="['active']" class="nav-link text-light">Proyectos</a></li>
+          <li><a [routerLink]="['/profile']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="user"></fa-icon>Perfil</a></li>
+          <li><a [routerLink]="['/stack']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="code"></fa-icon>Tecnologias</a></li>
+          <li><a [routerLink]="['/experiences']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Experiencia</a></li>
+          <li><a [routerLink]="['/studies']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
+          <li><a [routerLink]="['/works']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="display"></fa-icon>Proyectos</a></li>
         </ul>
       </div>
     </div>

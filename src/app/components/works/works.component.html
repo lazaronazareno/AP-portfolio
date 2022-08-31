@@ -1,7 +1,7 @@
 <div *ngIf="data" class="p-2 m-2 border-bottom border-warning">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Apps</h1>
-    <button class="btn btn-warning" [routerLink]="['/works-form']">Agregar</button>
+    <a [routerLink]="['/works-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
   </div>
   <div *ngFor="let app of data.works" class="card mb-3 bg-dark text-center">
     <div class="row g-0">
@@ -13,7 +13,7 @@
           <h1>{{app.name}}</h1>
           <p class="me-2">{{app.description}}</p>
           <p>{{app.link}}</p>
-          <button class="btn btn-warning" [routerLink]="['/work-edit-form']">Editar</button>
+          <a [routerLink]="['/work-edit-form']" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
         </div>
       </div>
     </div>

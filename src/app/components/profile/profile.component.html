@@ -11,9 +11,11 @@
       <p>{{data.address}}</p>
       <p>{{data.mail}}</p>
       <p>{{data.ocupation}}</p>
-      <button class="btn btn-warning"><a class="nav-link text-dark" href="{{data.repo_url}}">Github</a></button>
-      <button class="btn btn-warning"><a class="nav-link text-dark" href="{{data.repo_url}}">Linkedin</a></button>
-      <button class="btn btn-warning" [routerLink]="['/profile-form']">Editar</button>
+      <div class="d-flex justify-content-evenly w-100">
+        <a class="nav-link text-dark" href="{{data.repo_url}}"><fa-icon [icon]="github" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <a class="nav-link text-dark" href="{{data.linkedin_url}}"><fa-icon [icon]="linkedin" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+      </div>
+      <a [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="edit" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
     </div>
   </div>
 </div>
