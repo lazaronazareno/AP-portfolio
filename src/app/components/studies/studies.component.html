@@ -1,7 +1,7 @@
 <div *ngIf="data" class="p-2 m-2 border-bottom border-warning studies-container">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Estudios</h1>
-    <button class="btn btn-warning">Agregar</button>
+    <button class="btn btn-warning" [routerLink]="['/studies-form']">Agregar</button>
   </div>
   <div class="card-group">
     <div *ngFor="let study of data.education" class="card bg-dark text-center studies-item">
@@ -11,7 +11,7 @@
         <p class="me-2 card-text">{{study.title}}</p>
         <p class="card-text">{{study.career}}</p>
         <p>{{study.start}} - {{study.end}}</p>
-        <button class="btn btn-warning">Editar</button>
+        <button class="btn btn-warning" [routerLink]="['/study-edit-form']">Editar</button>
       </div>
     </div>
   </div>

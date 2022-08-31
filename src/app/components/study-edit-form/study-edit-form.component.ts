@@ -3,20 +3,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UploadImgService } from 'src/app/services/upload-img.service';
 
 @Component({
-  selector: 'app-experience-form',
-  templateUrl: './experience-form.component.html',
-  styleUrls: ['./experience-form.component.scss']
+  selector: 'app-study-edit-form',
+  templateUrl: './study-edit-form.component.html',
+  styleUrls: ['./study-edit-form.component.scss']
 })
-export class ExperienceFormComponent implements OnInit {
+export class StudyEditFormComponent implements OnInit {
   form : FormGroup;
   constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService) {
     this.form=this.formbuilder.group(
       {
         name:['', [Validators.required]],
-        company:['', [Validators.required]],
-        description:['', [Validators.required]],
+        school:['', [Validators.required]],
         photo_url:[''],
-        mode:[''],
         year_init:['', [Validators.required, Validators.email]],
         year_end:['', [Validators.required]],
       }
@@ -45,20 +43,12 @@ export class ExperienceFormComponent implements OnInit {
     return this.form.value('name')
   }
 
-  get Company() {
-    return this.form.value('company')
-  }
-
-  get Description() {
-    return this.form.value('description')
+  get School() {
+    return this.form.value('school')
   }
 
   get Photo_url() {
     return this.form.value('photo_url')
-  }
-
-  get Mode() {
-    return this.form.value('mode')
   }
 
   get Year_init() {
@@ -68,5 +58,4 @@ export class ExperienceFormComponent implements OnInit {
   get Year_end() {
     return this.form.value('year_end')
   }
-
 }

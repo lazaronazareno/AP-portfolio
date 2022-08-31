@@ -16,9 +16,9 @@ export class ProfileFormComponent implements OnInit {
         name:['', [Validators.required]],
         lastName:['', [Validators.required]],
         nationality:['', [Validators.required]],
-        tel:['', [Validators.required]],
-        address:['', [Validators.required]],
-        mail:['', [Validators.required]],
+        tel:[''],
+        address:[''],
+        mail:['', [Validators.required, Validators.email]],
         about_me:['', [Validators.required]],
         ocupation:['', [Validators.required]],
         photo_url:['', [Validators.required]],
@@ -26,13 +26,50 @@ export class ProfileFormComponent implements OnInit {
         repo_url:['', [Validators.required]],
         linkedin_url:['', [Validators.required]],
       }
-    )
-   }
-
-  ngOnInit(): void {
-  }
-
-  onSend(e:Event){
+      )
+    }
+    
+      get Name(){
+        return this.form.get('name');
+      }
+      get LastName(){
+        return this.form.get('lastName');
+      }
+      get Nationality(){
+        return this.form.get('nationality');
+      }
+      get Tel(){
+        return this.form.get('tel');
+      }
+      get Address(){
+        return this.form.get('address');
+      }
+      get Mail(){
+        return this.form.get('mail');
+      }
+      get Ocupation(){
+        return this.form.get('ocupation');
+      }
+      get ProfileImg(){
+        return this.form.get('photo_url');
+      }
+      get BackgroundImg(){
+        return this.form.get('background_url');
+      }
+      get About(){
+        return this.form.get('about_me');
+      }
+      get RepoUrl(){
+        return this.form.get('repo_url');
+      }
+      get LinkedinUrl(){
+        return this.form.get('linkedin_url');
+      }
+    
+    ngOnInit(): void {
+    }
+    
+    onSend(e:Event){
     e.preventDefault;
     console.log(this.form)
   }
@@ -55,42 +92,5 @@ export class ProfileFormComponent implements OnInit {
       this.form.value.background_url = url.data.url 
     ))
 }
-
-  get Name(){
-    return this.form.get('name');
-  }
-  get LastName(){
-    return this.form.get('lastName');
-  }
-  get Nationality(){
-    return this.form.get('nationality');
-  }
-  get Tel(){
-    return this.form.get('tel');
-  }
-  get Address(){
-    return this.form.get('address');
-  }
-  get Mail(){
-    return this.form.get('mail');
-  }
-  get Ocupation(){
-    return this.form.get('ocupation');
-  }
-  get ProfileImg(){
-    return this.form.get('photo_url');
-  }
-  get BackgroundImg(){
-    return this.form.get('background_url');
-  }
-  get About(){
-    return this.form.get('about_me');
-  }
-  get RepoUrl(){
-    return this.form.get('repo_url');
-  }
-  get LinkedinUrl(){
-    return this.form.get('linkedin_url');
-  }
 
 }

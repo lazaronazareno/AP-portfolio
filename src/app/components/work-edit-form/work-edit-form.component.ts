@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UploadImgService } from 'src/app/services/upload-img.service';
 
 @Component({
-  selector: 'app-works-form',
-  templateUrl: './works-form.component.html',
-  styleUrls: ['./works-form.component.scss']
+  selector: 'app-work-edit-form',
+  templateUrl: './work-edit-form.component.html',
+  styleUrls: ['./work-edit-form.component.scss']
 })
-export class WorksFormComponent implements OnInit {
+export class WorkEditFormComponent implements OnInit {
   form : FormGroup;
 
   constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService) {
@@ -59,5 +59,4 @@ export class WorksFormComponent implements OnInit {
       this.form.value.photo_url = url.data.url 
     ))
   }
-
 }

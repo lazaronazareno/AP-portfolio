@@ -1,16 +1,17 @@
 <div *ngIf="data" class="p-2 m-2 border-bottom border-warning experience-container">
   <div class="d-flex justify-content-between align-items-center">
     <h1>Experiencia</h1>
-    <button class="btn btn-warning">Agregar</button>
+    <button class="btn btn-warning" [routerLink]="['/experience-form']">Agregar</button>
   </div>
   <div class="card-group">
     <div *ngFor="let exps of data.experience" class="card bg-dark text-center experience-item">
-      <img class="card-img-top" src="{{exps.img}}" alt="{{exps.company}}">
+      <img class="card-img-top" src="{{exps.photo_url}}" alt="{{exps.company}}">
       <div class="card-body">
-        <p class="card-title">{{exps.position}}</p>
+        <p class="card-title">{{exps.name}}</p>
         <p class="me-2 card-text">{{exps.company}}</p>
-        <p class="card-text">{{exps.mode}}</p>
-        <button class="btn btn-warning">Editar</button>
+        <p class="me-2 card-text">{{exps.description}}</p>
+        <p class="card-text">{{exps.mode + " - " + exps.year_init + "-" + exps.year_end}}</p>
+        <button class="btn btn-warning" [routerLink]="['/experience-edit-form']">Editar</button>
       </div>
     </div>
   </div>

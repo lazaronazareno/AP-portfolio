@@ -1,7 +1,7 @@
-<h1>Añadir nueva tecnologia : </h1>
 <form [formGroup]="form" class="m-5" (ngSubmit)="onSend($event)">
+  <p class="fs-5 border-bottom border-warning w-100 text-center">Nueva tecnologia</p>
   <div class="mb-3">
-    <label for="name" class="form-label">Nombre</label>
+    <label for="name" class="form-label">Nombre :</label>
     <input type="text" formControlName="name"
       [ngClass]="{ 'is-invalid': Name?.errors && Name?.touched, 'is-valid': !Name?.errors && Name?.touched}"
       class="form-control" id="name">
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="mb-3">
-    <label for="img" class="form-label">Nombre</label>
+    <label for="img" class="form-label">Imagen :</label>
     <input type="file" formControlName="img"
       [ngClass]="{ 'is-invalid': Img?.errors && Img?.touched, 'is-valid': !Img?.errors && Img?.touched}"
       class="form-control" id="img"

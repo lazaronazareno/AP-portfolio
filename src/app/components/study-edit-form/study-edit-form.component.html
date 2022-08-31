@@ -1,5 +1,5 @@
 <form [formGroup]="form" class="m-3 d-flex flex-wrap justify-content-evenly" (ngSubmit)="onSend($event)">
-  <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar educación</p>
+  <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Modificar educación</p>
   <div class="mb-3 form-item-container">
     <label for="name" class="form-label">Titulo :</label>
     <input type="text" formControlName="name"
@@ -46,5 +46,5 @@
       <p *ngIf="Photo_url?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
   </div>
-  <button type="submit" class="btn btn-warning w-75">Registrar</button>
+  <button type="submit" class="btn btn-warning w-75">Modificar</button>
 </form>

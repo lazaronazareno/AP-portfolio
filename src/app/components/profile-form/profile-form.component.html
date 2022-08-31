@@ -1,62 +1,92 @@
-<h1>Modificar datos del perfil </h1>
-<form [formGroup]="form" class="m-5" (ngSubmit)="onSend($event)">
-  <div class="mb-3">
-    <label for="name" class="form-label">Nombre</label>
+<form [formGroup]="form" class="m-3 d-flex flex-wrap justify-content-evenly" (ngSubmit)="onSend($event)">
+  <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Datos personales</p>
+  <div class="mb-3 form-item-container">
+    <label for="name" class="form-label">Nombre :</label>
     <input type="text" formControlName="name"
       [ngClass]="{ 'is-invalid': Name?.errors && Name?.touched, 'is-valid': !Name?.errors && Name?.touched}"
       class="form-control" id="name">
     <div *ngIf="Name?.errors && Name?.touched">
-      <p *ngIf="Name?.hasError('required')" class="text-danger">El nombre es requerido</p>
+      <p *ngIf="Name?.hasError('required')" class="text-danger">Nombre requerido</p>
     </div>
   </div>
-  <div class="mb-3">
-    <label for="lastName" class="form-label">Apellido</label>
+  <div class="mb-3 form-item-container">
+    <label for="lastName" class="form-label">Apellido :</label>
     <input type="text" formControlName="lastName"
       [ngClass]="{ 'is-invalid': LastName?.errors && LastName?.touched, 'is-valid': !LastName?.errors && LastName?.touched}"
       class="form-control" id="lastName">
     <div *ngIf="LastName?.errors && LastName?.touched">
-      <p *ngIf="LastName?.hasError('required')" class="text-danger">El nombre es requerido</p>
+      <p *ngIf="LastName?.hasError('required')" class="text-danger">Apellido requerido</p>
     </div>
   </div>
-<!--   <div class="mb-3">
-    <label for="aaa" class="form-label">apellido</label>
-    <input type="text" formControlName="aaa"
-      [ngClass]="{ 'is-invalid': aaa?.errors && aaa?.touched, 'is-valid': !aaa?.errors && aaa?.touched}"
-      class="form-control" id="aaa">
-    <div *ngIf="aaa?.errors && aaa?.touched">
-      <p *ngIf="aaa?.hasError('required')" class="text-danger">El nombre es requerido</p>
+  <div class="mb-3 form-item-container">
+    <label for="Nationality" class="form-label">Nacionalidad :</label>
+    <input type="text" formControlName="nationality"
+      [ngClass]="{ 'is-invalid': Nationality?.errors && Nationality?.touched, 'is-valid': !Nationality?.errors && Nationality?.touched}"
+      class="form-control" id="Nationality">
+    <div *ngIf="Nationality?.errors && Nationality?.touched">
+      <p *ngIf="Nationality?.hasError('required')" class="text-danger">Nacionalidad requerida</p>
     </div>
-  </div> -->
-  <div class="mb-3">
-    <label for="Address" class="form-label">Ubicacion</label>
-    <input type="text" formControlName="Address"
-      [ngClass]="{ 'is-invalid': Address?.errors && Address?.touched, 'is-valid': !Address?.errors && Address?.touched}"
+  </div>
+  <div class="mb-3 form-item-container long-input">
+    <label for="Mail" class="form-label">Email :</label>
+    <input type="text" formControlName="mail"
+      [ngClass]="{ 'is-invalid': Mail?.errors && Mail?.touched, 'is-valid': !Mail?.errors && Mail?.touched}"
+      class="form-control" id="Mail">
+    <div *ngIf="Mail?.errors && Mail?.touched">
+      <p *ngIf="Mail?.hasError('required')" class="text-danger">Mail requerido</p>
+      <p *ngIf="Mail?.hasError('email')" class="text-danger">El formato del email es invalido</p>
+    </div>
+  </div>
+  <div class="mb-3 form-item-container">
+    <label for="Tel" class="form-label">Tel :</label>
+    <input type="number" formControlName="tel"
+      class="form-control" id="Tel">
+  </div>
+  <div class="mb-3 form-item-container">
+    <label for="Address" class="form-label">Direccion :</label>
+    <input type="text" formControlName="address"
       class="form-control" id="Address">
-    <div *ngIf="Address?.errors && Address?.touched">
-      <p *ngIf="Address?.hasError('required')" class="text-danger">El campo es requerido</p>
-    </div>
   </div>
-  <div class="mb-3">
-    <label for="Ocupation" class="form-label">Ocupación</label>
-    <input type="text" formControlName="Ocupation"
+  <div class="mb-3 form-item-container">
+    <label for="Ocupation" class="form-label">Ocupación :</label>
+    <input type="text" formControlName="ocupation"
       [ngClass]="{ 'is-invalid': Ocupation?.errors && Ocupation?.touched, 'is-valid': !Ocupation?.errors && Ocupation?.touched}"
       class="form-control" id="Ocupation">
     <div *ngIf="Ocupation?.errors && Ocupation?.touched">
-      <p *ngIf="Ocupation?.hasError('required')" class="text-danger">El nombre es requerido</p>
+      <p *ngIf="Ocupation?.hasError('required')" class="text-danger">Ocupación requerida</p>
     </div>
   </div>
-  <div class="mb-3">
-    <label for="about" class="form-label">Sobre mí</label>
-    <input type="text" formControlName="about"
+  <div class="mb-3 form-item-container long-input">
+    <label for="about" class="form-label">Sobre mí :</label>
+    <input type="text" formControlName="about_me"
       [ngClass]="{ 'is-invalid': About?.errors && About?.touched, 'is-valid': !About?.errors && About?.touched}"
       class="form-control" id="about">
     <div *ngIf="About?.errors && About?.touched">
-      <p *ngIf="About?.hasError('required')" class="text-danger">El nombre es requerido</p>
+      <p *ngIf="About?.hasError('required')" class="text-danger">Campo requerido</p>
     </div>
   </div>
-  <div class="mb-3">
-    <label for="profileImg" class="form-label">Imagen de Perfil</label>
-    <input type="file" formControlName="profileImg"
+  <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Enlaces</p>
+  <div class="mb-3 form-item-container">
+    <label for="RepoUrl" class="form-label">Enlace Repositorio :</label>
+    <input type="text" formControlName="repo_url"
+      [ngClass]="{ 'is-invalid': RepoUrl?.errors && RepoUrl?.touched, 'is-valid': !RepoUrl?.errors && RepoUrl?.touched}"
+      class="form-control" id="RepoUrl">
+    <div *ngIf="RepoUrl?.errors && RepoUrl?.touched">
+      <p *ngIf="RepoUrl?.hasError('required')" class="text-danger">Enlace requerido</p>
+    </div>
+  </div>
+  <div class="mb-3 form-item-container">
+    <label for="LinkedinUrl" class="form-label">Enlace Linkedin :</label>
+    <input type="text" formControlName="linkedin_url"
+      [ngClass]="{ 'is-invalid': LinkedinUrl?.errors && LinkedinUrl?.touched, 'is-valid': !LinkedinUrl?.errors && LinkedinUrl?.touched}"
+      class="form-control" id="LinkedinUrl">
+    <div *ngIf="LinkedinUrl?.errors && LinkedinUrl?.touched">
+      <p *ngIf="LinkedinUrl?.hasError('required')" class="text-danger">Enlace requerido</p>
+    </div>
+  </div>
+  <div class="mb-3 form-item-container">
+    <label for="profileImg" class="form-label">Imagen de Perfil :</label>
+    <input type="file" formControlName="photo_url"
       [ngClass]="{ 'is-invalid': ProfileImg?.errors && ProfileImg?.touched, 'is-valid': !ProfileImg?.errors && ProfileImg?.touched}"
       class="form-control" id="profileImg"
       (input)="handleProfileFileInput($event)">
@@ -64,9 +94,9 @@
       <p *ngIf="ProfileImg?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
   </div>
-  <div class="mb-3">
-    <label for="backgroundImg" class="form-label">Banner:</label>
-    <input type="file" formControlName="backgroundImg"
+  <div class="mb-3 form-item-container">
+    <label for="backgroundImg" class="form-label">Banner :</label>
+    <input type="file" formControlName="background_url"
       [ngClass]="{ 'is-invalid': BackgroundImg?.errors && BackgroundImg?.touched, 'is-valid': !BackgroundImg?.errors && BackgroundImg?.touched}"
       class="form-control" id="backgroundImg"
       (input)="handleProfileFileInput($event)">
@@ -74,5 +104,5 @@
       <p *ngIf="BackgroundImg?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
   </div>
-  <button type="submit" class="btn btn-warning w-100">Registrar</button>
+  <button type="submit" class="btn btn-warning w-75">Registrar</button>
 </form>

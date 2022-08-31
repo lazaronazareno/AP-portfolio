@@ -11,11 +11,9 @@
       <p>{{data.address}}</p>
       <p>{{data.mail}}</p>
       <p>{{data.ocupation}}</p>
-      <button class="btn btn-warning"><a href="{{data.repo_url}}">Github</a></button>
-      <button class="btn btn-warning"><a href="{{data.repo_url}}">Linkedin</a></button>
-      <button class="btn btn-warning">Tengo interés en</button>
-      <button class="btn btn-light">Añadir seccion</button>
-      <button class="btn btn-light">Más</button>
+      <button class="btn btn-warning"><a class="nav-link text-dark" href="{{data.repo_url}}">Github</a></button>
+      <button class="btn btn-warning"><a class="nav-link text-dark" href="{{data.repo_url}}">Linkedin</a></button>
+      <button class="btn btn-warning" [routerLink]="['/profile-form']">Editar</button>
     </div>
   </div>
 </div>

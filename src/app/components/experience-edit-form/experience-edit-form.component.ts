@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UploadImgService } from 'src/app/services/upload-img.service';
 
 @Component({
-  selector: 'app-experience-form',
-  templateUrl: './experience-form.component.html',
-  styleUrls: ['./experience-form.component.scss']
+  selector: 'app-experience-edit-form',
+  templateUrl: './experience-edit-form.component.html',
+  styleUrls: ['./experience-edit-form.component.scss']
 })
-export class ExperienceFormComponent implements OnInit {
+export class ExperienceEditFormComponent implements OnInit {
   form : FormGroup;
   constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService) {
     this.form=this.formbuilder.group(

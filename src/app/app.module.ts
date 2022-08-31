@@ -22,6 +22,9 @@ import { StackFormComponent } from './components/stack-form/stack-form.component
 import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
 import { StudiesFormComponent } from './components/studies-form/studies-form.component';
 import { WorksFormComponent } from './components/works-form/works-form.component';
+import { ExperienceEditFormComponent } from './components/experience-edit-form/experience-edit-form.component';
+import { StudyEditFormComponent } from './components/study-edit-form/study-edit-form.component';
+import { WorkEditFormComponent } from './components/work-edit-form/work-edit-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { WorksFormComponent } from './components/works-form/works-form.component
     StackFormComponent,
     ExperienceFormComponent,
     StudiesFormComponent,
-    WorksFormComponent
+    WorksFormComponent,
+    ExperienceEditFormComponent,
+    StudyEditFormComponent,
+    WorkEditFormComponent
   ],
   imports: [
     BrowserModule,
