@@ -13,49 +13,31 @@
   "linkedin_url":"url de linkedin",
   "experience":[
                 {
-                "name":"Desarrollador Front-End",
+                "position":"Desarrollador Front-End",
                 "company":"Alkemy",
                 "description":"description",
                 "photo_url":"",
                 "mode":"full-time",
-                "year_init":"8/21",
-                "year_end":"10/21"
+                "date_init":"2021-08-01",
+                "date_end":"2021-10-01"
                 },
                 {
-                "name":"Desarrollador Front-End",
+                "position":"Desarrollador Front-End",
                 "company":"Alkemy",
-                "description":"",
+                "description":"description",
                 "photo_url":"",
                 "mode":"full-time",
-                "year_init":"8/21",
-                "year_end":"10/21"
+                "date_init":"2021-08-01",
+                "date_end":"2021-10-01"
                 },
                 {
-                "name":"Desarrollador Front-End",
+                "position":"Desarrollador Front-End",
                 "company":"Alkemy",
-                "description":"",
+                "description":"description",
                 "photo_url":"",
                 "mode":"full-time",
-                "year_init":"8/21",
-                "year_end":"10/21"
-                },
-                {
-                "name":"Desarrollador Front-End",
-                "company":"Alkemy",
-                "description":"",
-                "photo_url":"",
-                "mode":"full-time",
-                "year_init":"8/21",
-                "year_end":"10/21"
-                },
-                {
-                "name":"Desarrollador Front-End",
-                "company":"Alkemy",
-                "description":"",
-                "photo_url":"",
-                "mode":"full-time",
-                "year_init":"8/21",
-                "year_end":"10/21"
+                "date_init":"2021-08-01",
+                "date_end":"2021-10-01"
                 }
 ],
   "education": [
@@ -63,28 +45,29 @@
                   "school":"Universidad de Buenos Aires",
                   "name":"Psicologia",
                   "photo_url":"",
-                  "year_init":"2017",
-                  "year_end":"2017"
+                  "date_init":"2017",
+                  "date_end":"2017"
                 },
                 {
                   "school":"Universidad de Buenos Aires",
                   "name":"Psicologia",
                   "photo_url":"",
-                  "year_init":"2017",
-                  "year_end":"2017"
+                  "date_init":"2017",
+                  "date_end":"2017"
                 },
                 {
                   "school":"Universidad de Buenos Aires",
                   "name":"Psicologia",
                   "photo_url":"",
-                  "year_init":"2017",
-                  "year_end":"2017"
+                  "date_init":"2017",
+                  "date_end":"2017"
                 }
   ],
   "works": [
                 {
                   "name":"Superheroes app",
                   "description":"react app, challenge alkemy",
+                  "stack":"react bootstrap",
                   "year_made": "",
                   "photo_url": "enlace",
                   "repo_url":"enlace",
@@ -93,6 +76,7 @@
                 {
                   "name":"Superheroes app",
                   "description":"react app, challenge alkemy",
+                  "stack":"react bootstrap",
                   "year_made": "",
                   "photo_url": "enlace",
                   "repo_url":"enlace",
@@ -101,14 +85,7 @@
                 {
                   "name":"Superheroes app",
                   "description":"react app, challenge alkemy",
-                  "year_made": "",
-                  "photo_url": "enlace",
-                  "repo_url":"enlace",
-                  "deploy_url":"enlace"
-                },
-                {
-                  "name":"Superheroes app",
-                  "description":"react app, challenge alkemy",
+                  "stack":"react bootstrap",
                   "year_made": "",
                   "photo_url": "enlace",
                   "repo_url":"enlace",

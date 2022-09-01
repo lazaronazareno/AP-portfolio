@@ -1,5 +1,5 @@
-<h1 class="m-5">Iniciar Sesion</h1>
-<form [formGroup]="form" class="m-5" (ngSubmit)="onSend($event)">
+<p class="m-5 fs-2 border-bottom border-warning text-center">Iniciar Sesion</p>
+<form [formGroup]="form" class="m-5 d-flex flex-column align-items-center" (ngSubmit)="onSend($event)">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
     <input type="email" formControlName="email"
@@ -20,9 +20,5 @@
       <p *ngIf="Password?.errors?.['minlength']" class="text-danger">La contraseña debe ser de 8 o más caracteres</p>
     </div>
   </div>
-  <button type="submit" class="btn btn-warning w-100">Entrar</button>
+  <button type="submit" class="btn btn-warning">Entrar</button>
 </form>
-<div class="m-5 d-flex flex-column align-items-center">
-  <span>Si aun no tienes cuenta, puedes registrarte :</span>
-  <button type="button" class="btn btn-outline-warning" (click)="onClick()">Registrarse</button>
-</div>

@@ -27,6 +27,8 @@ import { WorksFormComponent } from './components/works-form/works-form.component
 import { ExperienceEditFormComponent } from './components/experience-edit-form/experience-edit-form.component';
 import { StudyEditFormComponent } from './components/study-edit-form/study-edit-form.component';
 import { WorkEditFormComponent } from './components/work-edit-form/work-edit-form.component';
+import { RouterModule } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -48,14 +50,16 @@ import { WorkEditFormComponent } from './components/work-edit-form/work-edit-for
     WorksFormComponent,
     ExperienceEditFormComponent,
     StudyEditFormComponent,
-    WorkEditFormComponent
+    WorkEditFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule
   ],
   providers: [PortfolioService, {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]

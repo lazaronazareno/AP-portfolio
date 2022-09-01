@@ -1,0 +1,41 @@
+<footer *ngIf="data" class="py-2 px-5 border-top border-warning" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
+  <div class="p-2 d-flex justify-content-center">
+    <h5 class="mx-3">Secciones</h5>
+    <div class="col-2">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="portfolio#profile" class="nav-link p-0 text-muted">Perfil</a></li>
+        <li class="nav-item mb-2"><a href="portfolio#stack" class="nav-link p-0 text-muted">Tecnologias</a></li>
+        <li class="nav-item mb-2"><a href="portfolio#experience" class="nav-link p-0 text-muted">Experiencia</a></li>
+      </ul>
+    </div>
+
+    <div class="col-2">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="portfolio#study" class="nav-link p-0 text-muted">Estudios</a></li>
+        <li class="nav-item mb-2"><a href="portfolio#works" class="nav-link p-0 text-muted">Proyectos</a></li>
+        <li class="nav-item mb-2"><a [routerLink]="['/login']" class="nav-link p-0 text-muted">Ingresar</a></li>
+      </ul>
+    </div>
+
+    <div class="col-4 offset-1">
+      <form>
+        <h5>Contactame</h5>
+        <p>Puedes enviarme tu opinion de la pagina o por motivos laborales </p>
+        <div class="d-flex w-100 gap-2 align-items-end">
+          <p class="text-secondary m-0">lazaronazareno@gmail.com</p>
+          <button class="btn btn-warning btn-sm" type="button">
+            <a href="mailto:lazaronazareno@gmail.com?Subject=Contacto%20por%20portfolio" class="text-decoration-none text-dark">Enviar Mail</a>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between pt-4 border-top border-warning align-items-center">
+    <p>© 2022 Argentina Programa, Todos los derechos reservados.</p>
+    <ul class="list-unstyled d-flex">
+      <li class="ms-3"><a class="nav-link text-dark" href="https://github.com"><fa-icon [icon]="github" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
+      <li class="ms-3"><a class="nav-link text-dark" href="https://linkedin.com"><fa-icon [icon]="linkedin" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
+    </ul>
+  </div>
+</footer>

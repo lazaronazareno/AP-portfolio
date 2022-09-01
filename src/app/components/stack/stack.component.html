@@ -1,6 +1,7 @@
-<div *ngIf="data" class="d-flex stack-container border-bottom border-warning justify-content-center align-items-center">
+<div *ngIf="data" class="d-flex stack-container border-bottom border-warning justify-content-center align-items-center" id="stack">
   <div *ngFor="let stack of data.stack" class="stack-item d-flex justify-content-center">
     <img src="{{stack.img}}" alt="{{stack.name}}">
   </div>
-  <a [routerLink]="['/stack-form']" class="edit-button" alt="edit"><fa-icon icon="edit" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+  <a *ngIf="isUserAuth" [routerLink]="['/stack-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+  <div *ngIf="data.stack.length === 0">No hay Tecnologias agregadas.</div>
 </div>

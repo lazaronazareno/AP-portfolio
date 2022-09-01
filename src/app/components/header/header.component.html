@@ -1,16 +1,17 @@
 <header>
-  <div class="px-3 bg-dark text-white border-bottom border-warning">
-    <div class="container">
+  <div class="px-3 bg-dark text-white border-bottom border-warning position-fixed w-100 top-0">
+    <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <div class="d-flex align-items-center my-2 my-lg-0 me-lg-auto">
-          <a [routerLink]="['/portfolio']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="home"></fa-icon>Inicio</a>
+          <a [routerLink]="['/portfolio']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="home"></fa-icon>Inicio</a>
         </div>
         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-          <li><a [routerLink]="['/profile']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="user"></fa-icon>Perfil</a></li>
-          <li><a [routerLink]="['/stack']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="code"></fa-icon>Tecnologias</a></li>
-          <li><a [routerLink]="['/experiences']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Experiencia</a></li>
-          <li><a [routerLink]="['/studies']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
-          <li><a [routerLink]="['/works']" [routerLinkActive]="['active']" class="nav-link text-light"><fa-icon class="mx-1" [icon]="display"></fa-icon>Proyectos</a></li>
+          <li [routerLink]="['portfolio#profile']" [routerLinkActive]="['active']" fragment="portfolio#profile"><a href="portfolio#profile" class="nav-link text-light"><fa-icon class="mx-1" [icon]="user"></fa-icon>Perfil</a></li>
+          <li [routerLink]="['/portfolio#stack']" [routerLinkActive]="['active']" fragment="portfolio#stack"><a href="portfolio#stack" class="nav-link text-light"><fa-icon class="mx-1" [icon]="code"></fa-icon>Tecnologias</a></li>
+          <li [routerLink]="['/portfolio#experience']" [routerLinkActive]="['active']" fragment="portfolio#experience"><a href="portfolio#experience" class="nav-link text-light"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Experiencia</a></li>
+          <li [routerLink]="['/portfolio#studies']" [routerLinkActive]="['active']" fragment="portfolio#study"><a href="portfolio#study" class="nav-link text-light"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
+          <li [routerLink]="['/portfolio#works']" [routerLinkActive]="['active']" fragment="portfolio#works"><a href="portfolio#works" class="nav-link text-light"><fa-icon class="mx-1" [icon]="display"></fa-icon>Proyectos</a></li>
+          <li [routerLink]="['/login']" [routerLinkActive]="['active']"><a class="nav-link text-light ms-auto text-center">Ingresar</a></li>
         </ul>
       </div>
     </div>

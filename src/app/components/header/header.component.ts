@@ -20,25 +20,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  goToProfile() {
-    this.router.navigate(['/', 'profile'])
-  }
-
-  goToExperience() {
-    this.router.navigate(['/', 'experiences'])
-  }
-
-  goToAbilities() {
-    this.router.navigate(['/', 'abilities'])
-  }
-
-  goToStudies() {
-    this.router.navigate(['/', 'studies'])
-  }
-
-  goToWorks() {
-    this.router.navigate(['/', 'works'])
-  }
-
 }

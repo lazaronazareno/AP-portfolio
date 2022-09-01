@@ -1,4 +1,5 @@
 .nav li, .nav li a {
+  cursor: pointer;
   &:hover, &:active{
     background-color: orange;
     color: black!important;
@@ -17,4 +18,8 @@
   &:focus{
     box-shadow: none!important;
   }
+}
+
+header div {
+  z-index: 100;
 }
