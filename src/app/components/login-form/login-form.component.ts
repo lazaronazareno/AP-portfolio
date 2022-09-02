@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,6 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginFormComponent implements OnInit {
   form:FormGroup;
+  error: HttpErrorResponse | undefined;
 
   constructor(private formBuilder:FormBuilder, private authService:AuthService, private route:Router) {
     this.form=this.formBuilder.group(
@@ -36,7 +38,12 @@ export class LoginFormComponent implements OnInit {
     this.authService.Login(this.form.value.email, this.form.value.password).subscribe(data=>{
       console.log('data :' + JSON.stringify(data));
       this.route.navigate(['/portfolio']);
-    })
+    },
+    error => {
+      console.log('oops', error)
+      this.error = error;
+    }
+    )
   }
 
   onClick(){

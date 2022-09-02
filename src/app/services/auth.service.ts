@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, EMPTY, throwError } from 'rxjs';
 import { map } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,8 @@ import { map } from 'rxjs';
 export class AuthService {
   url="http://localhost:8080";
   currentUserSubject: BehaviorSubject<any>;
+  clientSideError : string | undefined;
+  serverSideError : string | undefined;
 
   constructor(private http:HttpClient) {
     console.log("auth service running")
@@ -24,6 +27,27 @@ export class AuthService {
       this.currentUserSubject.next(data)
       return data;
       
+    }),
+    catchError((error: HttpErrorResponse) => {
+      if (error.error instanceof Error) {
+        // A client-side or network error occurred. Handle it accordingly.
+        console.error('An error occurred:', error.error.message);
+        this.clientSideError = 'An error occurred:', error.error.message;
+      } else {
+        // The backend returned an unsuccessful response code.
+        // The response body may contain clues as to what went wrong,
+        console.error(`Backend returned code ${error.status}, body was: ${error.error.errors[0]}`);
+        this.serverSideError = `Backend returned code ${error.status}, body was: ${error.error[0]}`;
+      }
+
+      // If you want to return a new response:
+      //return of(new HttpResponse({body: [{name: "Default value..."}]}));
+
+      // If you want to return the error on the upper level:
+      return throwError(error);
+
+      // or just return nothing:
+      // return EMPTY;
     }))
    }
 

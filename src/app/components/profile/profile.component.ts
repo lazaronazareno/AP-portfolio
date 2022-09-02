@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  @Input() profileData :any;
   data : any;
   github = faGithub;
   linkedin = faLinkedin;
@@ -18,12 +19,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.authUser.UserAuthenticated && this.authUser.UserAuthenticated.token) { this.isUserAuth = true}
-    console.log(this.isUserAuth)
-    this.portfolioService.getData()
-    .subscribe(data => (
-      console.log(data),
-      this.data = data
-    ))
+    this.data = this.profileData;
   }
 
 }

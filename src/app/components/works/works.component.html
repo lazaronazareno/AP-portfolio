@@ -1,4 +1,4 @@
-<div *ngIf="data" class="p-5 m-2" id="works">
+<div *ngIf="data && profileData" class="p-5 m-2" id="works">
   <div class="d-flex mb-3 justify-content-between align-items-center">
     <h1>Apps</h1>
     <a *ngIf="isUserAuth" [routerLink]="['/works-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
@@ -19,4 +19,8 @@
     </div>
   </div>
   <div *ngIf="data.works.length === 0">No hay proyectos.</div>
+</div>
+<div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="profileData">
+  <p class="fs-3 m-0">No hay proyectos.</p>
+  <a *ngIf="isUserAuth" [routerLink]="['/works-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
 </div>

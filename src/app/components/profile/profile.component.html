@@ -19,3 +19,7 @@
     </div>
   </div>
 </div>
+<div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="!data">
+  <p class="fs-3 m-0">No hay informacion del usuario disponible</p>
+  <a *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+</div>

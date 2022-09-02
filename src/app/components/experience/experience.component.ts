@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent implements OnInit {
+  @Input() profileData :any;
   data : any;
   isUserAuth : boolean = false;
 
@@ -17,7 +18,7 @@ export class ExperienceComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.authUser.UserAuthenticated && this.authUser.UserAuthenticated.token) { this.isUserAuth = true}
-    this.portfolioService.getData()
+    this.portfolioService.getExperience()
     .subscribe(data => (
       this.data = data
     ))

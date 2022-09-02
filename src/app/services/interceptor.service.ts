@@ -16,7 +16,7 @@ export class InterceptorService implements HttpInterceptor {
     if(currentUser && currentUser.token){
       req=req.clone({
         setHeaders:{
-          Authorization : `Bearer ${currentUser.token}`
+          Authorization : `Bearer ${currentUser.token}`,
         }
       })
     }

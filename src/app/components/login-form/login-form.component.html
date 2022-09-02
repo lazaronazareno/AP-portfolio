@@ -16,9 +16,10 @@
       [ngClass]="{'is-invalid': Password?.errors && Password?.touched, 'is-valid': !Password?.errors && Password?.touched}"
       class="form-control" id="exampleInputPassword1">
     <div *ngIf="Password?.errors && Password?.touched">
-      <p *ngIf="Password?.hasError('required')" class="text-danger">La contraseña es requerido</p>
+      <p *ngIf="Password?.hasError('required')" class="text-danger">La contraseña es requerida</p>
       <p *ngIf="Password?.errors?.['minlength']" class="text-danger">La contraseña debe ser de 8 o más caracteres</p>
     </div>
   </div>
   <button type="submit" class="btn btn-warning">Entrar</button>
+  <p class="m-3 fs-4 text-danger" *ngIf="error">Error {{error.status}} : {{error.error.errors[0]}}</p>
 </form>

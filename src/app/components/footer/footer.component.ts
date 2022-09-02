@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
   constructor(private portfolioService: PortfolioService) { }
 
   ngOnInit(): void {
-    this.portfolioService.getData()
+    this.portfolioService.getProfile()
     .subscribe(data => (
       console.log(data),
       this.data = data
