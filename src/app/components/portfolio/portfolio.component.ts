@@ -18,7 +18,8 @@ export class PortfolioComponent implements OnInit {
     this.portfolioService.getProfile()
     .subscribe(data => (
       console.log(data),
-      this.profileData = data
+      this.profileData = data,
+      console.log(this.profileData)
     ))
   }
 

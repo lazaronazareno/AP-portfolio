@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faEdit, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faSquarePlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { AboutMeComponent } from './components/about-me/about-me.component';
 import { StackComponent } from './components/stack/stack.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { StudiesComponent } from './components/studies/studies.component';
@@ -24,17 +23,14 @@ import { StackFormComponent } from './components/stack-form/stack-form.component
 import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
 import { StudiesFormComponent } from './components/studies-form/studies-form.component';
 import { WorksFormComponent } from './components/works-form/works-form.component';
-import { ExperienceEditFormComponent } from './components/experience-edit-form/experience-edit-form.component';
-import { StudyEditFormComponent } from './components/study-edit-form/study-edit-form.component';
-import { WorkEditFormComponent } from './components/work-edit-form/work-edit-form.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { MissingImgDirective } from './missing-img.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    AboutMeComponent,
     StackComponent,
     ExperienceComponent,
     StudiesComponent,
@@ -48,10 +44,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ExperienceFormComponent,
     StudiesFormComponent,
     WorksFormComponent,
-    ExperienceEditFormComponent,
-    StudyEditFormComponent,
-    WorkEditFormComponent,
-    FooterComponent
+    FooterComponent,
+    MissingImgDirective
   ],
   imports: [
     BrowserModule,
@@ -68,5 +62,6 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIcons(faEdit)
     library.addIcons(faSquarePlus)
+    library.addIcons(faTrash)
   }
  }

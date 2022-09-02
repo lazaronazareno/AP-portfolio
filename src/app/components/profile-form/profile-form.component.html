@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="m-3 d-flex flex-wrap justify-content-evenly" (ngSubmit)="onSend($event)">
+<form [formGroup]="form" class="m-3 mt-5 d-flex flex-wrap justify-content-evenly" (ngSubmit)="onSend($event)">
   <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Datos personales</p>
   <div class="mb-3 form-item-container">
     <label for="name" class="form-label">Nombre :</label>
@@ -41,6 +41,11 @@
     <label for="Tel" class="form-label">Tel :</label>
     <input type="number" formControlName="tel"
       class="form-control" id="Tel">
+  </div>
+  <div class="mb-3 form-item-container">
+    <label for="Birth" class="form-label">Fecha de Nacimiento :</label>
+    <input type="date" formControlName="birth"
+      class="form-control" id="Birth">
   </div>
   <div class="mb-3 form-item-container">
     <label for="Address" class="form-label">Direccion :</label>
@@ -89,7 +94,8 @@
     <input type="file" formControlName="photo_url"
       [ngClass]="{ 'is-invalid': ProfileImg?.errors && ProfileImg?.touched, 'is-valid': !ProfileImg?.errors && ProfileImg?.touched}"
       class="form-control" id="profileImg"
-      (input)="handleProfileFileInput($event)">
+      (input)="handleProfileFileInput($event)"
+      accept="image/*">
     <div *ngIf="ProfileImg?.errors && ProfileImg?.touched">
       <p *ngIf="ProfileImg?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
@@ -99,10 +105,13 @@
     <input type="file" formControlName="background_url"
       [ngClass]="{ 'is-invalid': BackgroundImg?.errors && BackgroundImg?.touched, 'is-valid': !BackgroundImg?.errors && BackgroundImg?.touched}"
       class="form-control" id="backgroundImg"
-      (input)="handleProfileFileInput($event)">
+      (input)="handleProfileFileInput($event)"
+      accept="image/*">
     <div *ngIf="BackgroundImg?.errors && BackgroundImg?.touched">
       <p *ngIf="BackgroundImg?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
   </div>
   <button type="submit" class="btn btn-warning w-75">Registrar</button>
+  <p *ngIf="response" class="text-success">Registro enviado.</p>
+  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error}}</p>
 </form>

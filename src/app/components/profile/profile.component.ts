@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnChanges {
   @Input() profileData :any;
   data : any;
   github = faGithub;
@@ -19,6 +19,10 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.authUser.UserAuthenticated && this.authUser.UserAuthenticated.token) { this.isUserAuth = true}
+  }
+  
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes)
     this.data = this.profileData;
   }
 

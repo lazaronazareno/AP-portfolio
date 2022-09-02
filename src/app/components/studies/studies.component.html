@@ -4,20 +4,21 @@
     <a *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
   </div>
   <div class="card-group">
-    <div *ngFor="let study of data.education" class="card m-2 bg-dark text-center border border-warning studies-item">
-      <img class="card-img-top" src="{{study.img}}" alt="{{study.school}}">
+    <div *ngFor="let study of data" class="card m-2 bg-dark text-center border border-warning studies-item">
+      <img class="card-img-top card-img" src="{{study.photo_url}}" alt="{{study.school}}">
       <div class="card-body">
-        <p class="card-title">{{study.school}}</p>
-        <p class="me-2 card-text">{{study.title}}</p>
-        <p class="card-text">{{study.career}}</p>
-        <p>{{study.start}} - {{study.end}}</p>
-        <a *ngIf="isUserAuth" [routerLink]="['/study-edit-form']" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <p class="card-title fs-4">{{study.name}}</p>
+        <p class="me-2 card-text">{{study.school}}</p>
+        <p class="me-2 card-text">{{study.description}}</p>
+        <p>{{study.date_init}} - {{study.date_end}}</p>
+        <a *ngIf="isUserAuth" [routerLink]="['/studies-form', study.id]" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <a *ngIf="isUserAuth" class="delete-item-button" (click)="onDelete(study)" alt="delete"><fa-icon icon="trash" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
       </div>
     </div>
   </div>
-  <div *ngIf="data.education.length === 0">No hay estudios agregados.</div>
+  <div *ngIf="data.length === 0">No hay estudios agregados.</div>
 </div>
-<div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="profileData">
+<div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="profileData && !data">
   <p class="fs-3 m-0">No hay estudios agregados.</p>
   <a *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
 </div>

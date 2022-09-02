@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Experience } from 'src/app/porfolio-models';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UploadImgService } from 'src/app/services/upload-img.service';
 
 @Component({
@@ -9,26 +12,60 @@ import { UploadImgService } from 'src/app/services/upload-img.service';
 })
 export class ExperienceFormComponent implements OnInit {
   form : FormGroup;
-  constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService) {
+  response: string | undefined | Experience;
+  error : string | undefined;
+  id:null | undefined | string;
+
+  constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService,
+     private portfolioService : PortfolioService, private route:Router, private actRoute : ActivatedRoute) {
     this.form=this.formbuilder.group(
       {
-        name:['', [Validators.required]],
-        company:['', [Validators.required]],
-        description:['', [Validators.required]],
-        photo_url:[''],
-        mode:[''],
-        year_init:['', [Validators.required, Validators.email]],
-        year_end:['', [Validators.required]],
+        position:[null, [Validators.required]],
+        company:[null, [Validators.required]],
+        description:[null, [Validators.required]],
+        photo_url:[null],
+        mode:[null],
+        date_init:[null, [Validators.required]],
+        date_end:[null, [Validators.required]],
       }
       )
    }
 
   ngOnInit(): void {
+    this.id = this.actRoute.snapshot.paramMap.get('id')
+    console.log('id',this.id)
   }
 
   onSend(e:Event){
     e.preventDefault;
     console.log(this.form)
+    this.portfolioService.postExperience(this.form.value).subscribe({
+      next : (data) => {
+        console.log('post experience', data);
+        this.response = data;
+        this.route.navigate(['/portfolio']);
+      },
+      error: (error) => {
+        console.log('post experience failed', error);
+        this.error = error;
+      }
+    })
+  }
+
+  onUpdated(e:Event) {
+    e.preventDefault;
+    console.log(this.form)
+    this.portfolioService.putExperience(this.id, this.form.value).subscribe({
+      next : (data) => {
+        console.log('experience updated', data);
+        this.response = data;
+        this.route.navigate(['/portfolio']);
+      },
+      error: (error) => {
+        console.log('experience updated failed', error);
+        this.error = error;
+      }
+    })
   }
 
   handleFileInput(e: Event) {
@@ -41,32 +78,32 @@ export class ExperienceFormComponent implements OnInit {
     ))
   }
 
-  get Name() {
-    return this.form.value('name')
+  get Position() {
+    return this.form.get('position')
   }
 
   get Company() {
-    return this.form.value('company')
+    return this.form.get('company')
   }
 
   get Description() {
-    return this.form.value('description')
+    return this.form.get('description')
   }
 
   get Photo_url() {
-    return this.form.value('photo_url')
+    return this.form.get('photo_url')
   }
 
   get Mode() {
-    return this.form.value('mode')
+    return this.form.get('mode')
   }
 
-  get Year_init() {
-    return this.form.value('year_init')
+  get Date_init() {
+    return this.form.get('date_init')
   }
 
-  get Year_end() {
-    return this.form.value('year_end')
+  get Date_end() {
+    return this.form.get('date_end')
   }
 
 }

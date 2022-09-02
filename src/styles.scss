@@ -9,6 +9,17 @@
   right: 0;
 }
 
+.delete-item-button{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
 .form-item-container{
   width: 40vw;
+}
+
+.card-img{
+  height: 40vh;
 }

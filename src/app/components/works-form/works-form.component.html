@@ -1,5 +1,6 @@
-<form [formGroup]="form" class="m-3 d-flex flex-wrap justify-content-evenly" (ngSubmit)="onSend($event)">
-  <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar proyecto</p>
+<form [formGroup]="form" class="m-3 mt-5 d-flex flex-wrap justify-content-evenly">
+  <p *ngIf="!id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar proyecto</p>
+  <p *ngIf="id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Modificar proyecto</p>
   <div class="mb-3 form-item-container">
     <label for="name" class="form-label">Nombre :</label>
     <input type="text" formControlName="name"
@@ -16,6 +17,15 @@
       class="form-control" id="Description">
     <div *ngIf="Description?.errors && Description?.touched">
       <p *ngIf="Description?.hasError('required')" class="text-danger">Descripcion requerida</p>
+    </div>
+  </div>
+  <div class="mb-3 form-item-container">
+    <label for="Stack" class="form-label">Stack :</label>
+    <input type="text" formControlName="stack"
+      [ngClass]="{ 'is-invalid': Stack?.errors && Stack?.touched, 'is-valid': !Stack?.errors && Stack?.touched}"
+      class="form-control" id="Stack">
+    <div *ngIf="Stack?.errors && Stack?.touched">
+      <p *ngIf="Stack?.hasError('required')" class="text-danger">Stack requerido</p>
     </div>
   </div>
   <div class="mb-3 form-item-container">
@@ -55,5 +65,6 @@
       <p *ngIf="Photo_url?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
   </div>
-  <button type="submit" class="btn btn-warning w-75">Registrar</button>
+  <button *ngIf="!id" (click)="onSend($event)" type="submit" class="btn btn-warning w-75">Registrar</button>
+  <button *ngIf="id" (click)="onUpdated($event)" type="submit" class="btn btn-warning w-75">Modificar</button>
 </form>

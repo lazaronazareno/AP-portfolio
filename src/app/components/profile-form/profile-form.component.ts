@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Person } from 'src/app/porfolio-models';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 import { UploadImgService } from 'src/app/services/upload-img.service';
 
 @Component({
@@ -9,22 +12,27 @@ import { UploadImgService } from 'src/app/services/upload-img.service';
 })
 export class ProfileFormComponent implements OnInit {
   form : FormGroup;
+  portfolioData : undefined | Person;
+  response: string | undefined | Person;
+  error : string | undefined;
 
-  constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService) {
+  constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService,
+              private portfolioService: PortfolioService, private route:Router) {
     this.form=this.formbuilder.group(
       {
-        name:['', [Validators.required]],
-        lastName:['', [Validators.required]],
-        nationality:['', [Validators.required]],
-        tel:[''],
-        address:[''],
-        mail:['', [Validators.required, Validators.email]],
-        about_me:['', [Validators.required]],
-        ocupation:['', [Validators.required]],
-        photo_url:['', [Validators.required]],
-        background_url:['', [Validators.required]],
-        repo_url:['', [Validators.required]],
-        linkedin_url:['', [Validators.required]],
+        name:[null, [Validators.required]],
+        lastName:[null, [Validators.required]],
+        nationality:[null, [Validators.required]],
+        tel:[null],
+        address:[null],
+        birth:[null],
+        mail:[null, [Validators.required, Validators.email]],
+        about_me:[null, [Validators.required]],
+        ocupation:[null, [Validators.required]],
+        photo_url:[null, [Validators.required]],
+        background_url:[null, [Validators.required]],
+        repo_url:[null, [Validators.required]],
+        linkedin_url:[null, [Validators.required]],
       }
       )
     }
@@ -43,6 +51,9 @@ export class ProfileFormComponent implements OnInit {
       }
       get Address(){
         return this.form.get('address');
+      }
+      get Birth(){
+        return this.form.get('birth');
       }
       get Mail(){
         return this.form.get('mail');
@@ -67,21 +78,51 @@ export class ProfileFormComponent implements OnInit {
       }
     
     ngOnInit(): void {
+      this.portfolioService.getProfile().subscribe(data => (
+        this.portfolioData = data,
+        console.log(this.portfolioData),
+        console.log(this.portfolioData?.name)
+      ))
     }
     
     onSend(e:Event){
-    e.preventDefault;
-    console.log(this.form)
-  }
+      e.preventDefault;
+      console.log(this.form.value)
+      if(this.portfolioData?.name){
+        this.portfolioService.putProfile(this.form.value).subscribe({
+          next : (data) => {
+            console.log('Data updated', data);
+            this.response = data;
+            this.route.navigate(['/portfolio']);
+          },
+          error: (error) => {
+            console.log('data updated failed', error);
+            this.error = error;
+          }
+        })
+      } else {
+        this.portfolioService.postProfile(this.form.value).subscribe({
+          next : (data) => {
+            console.log('post succesfull!', data);
+            this.response = data;
+            this.route.navigate(['/portfolio']);
+          },
+          error: (error) => {
+            console.log('post failed', error);
+            this.error = error;
+          }
+        })
+      }
+    }
 
-  handleProfileFileInput(e: Event) {
-    const input = e.target as HTMLInputElement;
-    const img = input.files?.item(0);
-    console.log(input.files?.item(0));
-    this.imgbbService.uploadImg(img!).subscribe(url => (
-      console.log(url.data.url),
-      this.form.value.photo_url = url.data.url 
-    ))
+
+    handleProfileFileInput(e: Event) {
+      const input = e.target as HTMLInputElement;
+      const img = input.files?.item(0);
+      this.imgbbService.uploadImg(img as File).subscribe(url => (
+        console.log(url.data.url),
+        this.form.value.photo_url = url.data.url 
+      ))
 }
   handleBackgroundFileInput(e: Event) {
     const input = e.target as HTMLInputElement;

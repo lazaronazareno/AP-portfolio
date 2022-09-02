@@ -1,5 +1,6 @@
-<form [formGroup]="form" class="m-3 d-flex flex-wrap justify-content-evenly" (ngSubmit)="onSend($event)">
-  <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar educación</p>
+<form [formGroup]="form" class="m-3 mt-5 d-flex flex-wrap justify-content-evenly">
+  <p *ngIf="!id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar educación</p>
+  <p *ngIf="id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Modificar Estudio #{{id}}</p>
   <div class="mb-3 form-item-container">
     <label for="name" class="form-label">Titulo :</label>
     <input type="text" formControlName="name"
@@ -19,22 +20,28 @@
     </div>
   </div>
   <div class="mb-3 form-item-container">
-    <label for="Year_init" class="form-label">Año de inicio :</label>
-    <input type="number" formControlName="year_init"
-      [ngClass]="{ 'is-invalid': Year_init?.errors && Year_init?.touched, 'is-valid': !Year_init?.errors && Year_init?.touched}"
+    <label for="Date_init" class="form-label">Fecha de inicio :</label>
+    <input type="date" formControlName="date_init"
+      [ngClass]="{ 'is-invalid': Date_init?.errors && Date_init?.touched, 'is-valid': !Date_init?.errors && Date_init?.touched}"
       class="form-control" id="name">
-    <div *ngIf="Year_init?.errors && Year_init?.touched">
-      <p *ngIf="Year_init?.hasError('required')" class="text-danger">Año requerido</p>
+    <div *ngIf="Date_init?.errors && Date_init?.touched">
+      <p *ngIf="Date_init?.hasError('required')" class="text-danger">Fecha requerido</p>
     </div>
   </div>
   <div class="mb-3 form-item-container">
-    <label for="Year_end" class="form-label">Año de finalizacion :</label>
-    <input type="number" formControlName="year_end"
-      [ngClass]="{ 'is-invalid': Year_end?.errors && Year_end?.touched, 'is-valid': !Year_end?.errors && Year_end?.touched}"
+    <label for="Date_end" class="form-label">Fecha de finalizacion :</label>
+    <input type="date" formControlName="date_end"
+      [ngClass]="{ 'is-invalid': Date_end?.errors && Date_end?.touched, 'is-valid': !Date_end?.errors && Date_end?.touched}"
       class="form-control" id="name">
-    <div *ngIf="Year_end?.errors && Year_end?.touched">
-      <p *ngIf="Year_end?.hasError('required')" class="text-danger">Año requerido</p>
+    <div *ngIf="Date_end?.errors && Date_end?.touched">
+      <p *ngIf="Date_end?.hasError('required')" class="text-danger">Fecha requerido</p>
     </div>
+  </div>
+  <div class="mb-3 form-item-container">
+    <label for="description" class="form-label">Descripcion :</label>
+    <input type="text" formControlName="description"
+      [ngClass]="{ 'is-invalid': Description?.errors && Description?.touched, 'is-valid': !Description?.errors && Description?.touched}"
+      class="form-control" id="description">
   </div>
   <div class="mb-3 form-item-container">
     <label for="Photo_url" class="form-label">Imagen de la institución :</label>
@@ -46,5 +53,6 @@
       <p *ngIf="Photo_url?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
   </div>
-  <button type="submit" class="btn btn-warning w-75">Registrar</button>
+  <button *ngIf="!id" type="submit" (click)="onSend($event)" class="btn btn-warning w-75">Registrar</button>
+  <button *ngIf="id" type="submit" (click)="onUpdated($event)" class="btn btn-warning w-75">Modificar</button>
 </form>

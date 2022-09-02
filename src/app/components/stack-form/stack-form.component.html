@@ -11,7 +11,7 @@
   </div>
   <div class="mb-3">
     <label for="img" class="form-label">Imagen :</label>
-    <input type="file" formControlName="img"
+    <input type="file" formControlName="photo_url"
       [ngClass]="{ 'is-invalid': Img?.errors && Img?.touched, 'is-valid': !Img?.errors && Img?.touched}"
       class="form-control" id="img"
       (input)="handleFileInput($event)">
@@ -20,4 +20,6 @@
     </div>
   </div>
   <button type="submit" class="btn btn-warning w-100">Registrar</button>
+  <p *ngIf="response" class="text-success">Tecnologia Registrada correctamente.</p>
+  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error}}</p>
 </form>

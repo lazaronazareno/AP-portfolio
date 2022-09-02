@@ -20,10 +20,6 @@ export class PortfolioService {
       'Authorization', this.authService.UserAuthenticated.token,
     ).set('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, DELETE')
   };
-  
-  getData(): Observable<any> {
-    return this.http.get('./assets/data/data.json')
-  }
 
   getProfile(): Observable<any> {
     return this.http.get<Person>(this.url + '/person', this.httpOptions)
@@ -50,13 +46,14 @@ export class PortfolioService {
     return this.http.post<string>(this.url + '/experience', exp, this.httpOptions)
   }
 
-  putExperience(exp:Experience): Observable<Experience> {
-    return this.http.put<Experience>(this.url + '/experience', exp, this.httpOptions)
+  putExperience(id : string | undefined | null, exp : Experience): Observable<Experience> {
+    const newUrl = `${this.url}/experience/${id}`
+    return this.http.put<Experience>(newUrl, exp, this.httpOptions)
   }
 
   deleteExperience(experience : Experience): Observable<string> {
     const newUrl = `${this.url}/experience/${experience.id}`
-    return this.http.get<string>(newUrl, this.httpOptions)
+    return this.http.delete<string>(newUrl, this.httpOptions)
   }
 
   getStack(): Observable<Stack[]> {
@@ -72,13 +69,14 @@ export class PortfolioService {
     return this.http.post<string>(this.url + '/stack', stack, this.httpOptions)
   }
 
-  putStack(stack:Stack): Observable<Stack> {
-    return this.http.put<Stack>(this.url + '/stack', stack, this.httpOptions)
+  putStack(id: string | undefined | null, stack:Stack): Observable<Stack> {
+    const newUrl = `${this.url}/stack/${id}`
+    return this.http.put<Stack>(newUrl, stack, this.httpOptions)
   }
 
   deleteStack(Stack : Stack): Observable<string> {
     const newUrl = `${this.url}/stack/${Stack.id}`
-    return this.http.get<string>(newUrl, this.httpOptions)
+    return this.http.delete<string>(newUrl, this.httpOptions)
   }
   
   getStudy(): Observable<Study[]> {
@@ -94,13 +92,14 @@ export class PortfolioService {
     return this.http.post<string>(this.url + '/study', Study, this.httpOptions)
   }
 
-  putStudy(Study:Study): Observable<Study> {
-    return this.http.put<Study>(this.url + '/study', Study, this.httpOptions)
+  putStudy(id: string | undefined | null, Study:Study): Observable<Study> {
+    const newUrl = `${this.url}/study/${id}`
+    return this.http.put<Study>(newUrl, Study, this.httpOptions)
   }
 
   deleteStudy(Study : Study): Observable<string> {
     const newUrl = `${this.url}/study/${Study.id}`
-    return this.http.get<string>(newUrl, this.httpOptions)
+    return this.http.delete<string>(newUrl, this.httpOptions)
   }
 
   getProyect(): Observable<Proyect[]> {
@@ -116,13 +115,14 @@ export class PortfolioService {
     return this.http.post<string>(this.url + '/proyect', Proyect, this.httpOptions)
   }
 
-  putProyect(Proyect:Proyect): Observable<Proyect> {
-    return this.http.put<Proyect>(this.url + '/proyect', Proyect, this.httpOptions)
+  putProyect(id: string | undefined | null, Proyect:Proyect): Observable<Proyect> {
+    const newUrl = `${this.url}/proyect/${id}`
+    return this.http.put<Proyect>(newUrl, Proyect, this.httpOptions)
   }
 
   deleteProyect(Proyect : Proyect): Observable<string> {
     const newUrl = `${this.url}/proyect/${Proyect.id}`
-    return this.http.get<string>(newUrl, this.httpOptions)
+    return this.http.delete<string>(newUrl, this.httpOptions)
   }
 
 }

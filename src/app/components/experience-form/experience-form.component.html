@@ -1,28 +1,29 @@
-<form [formGroup]="form" class="m-3 d-flex flex-wrap justify-content-evenly" (ngSubmit)="onSend($event)">
-  <p class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar Experiencia</p>
+<form [formGroup]="form" class="m-3 mt-5 d-flex flex-wrap justify-content-evenly">
+  <p *ngIf="!id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar Experiencia</p>
+  <p *ngIf="id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Modificar Experiencia #{{id}}</p>
   <div class="mb-3 form-item-container">
-    <label for="name" class="form-label">Puesto :</label>
-    <input type="text" formControlName="name"
-      [ngClass]="{ 'is-invalid': Name?.errors && Name?.touched, 'is-valid': !Name?.errors && Name?.touched}"
-      class="form-control" id="name">
-    <div *ngIf="Name?.errors && Name?.touched">
-      <p *ngIf="Name?.hasError('required')" class="text-danger">Nombre requerido</p>
+    <label for="position" class="form-label">Puesto :</label>
+    <input type="text" formControlName="position"
+      [ngClass]="{ 'is-invalid': Position?.errors && Position?.touched, 'is-valid': !Position?.errors && Position?.touched}"
+      class="form-control" id="position">
+    <div *ngIf="Position?.errors && Position?.touched">
+      <p *ngIf="Position?.hasError('required')" class="text-danger">Campo requerido</p>
     </div>
   </div>
   <div class="mb-3 form-item-container">
     <label for="Company" class="form-label">Empresa :</label>
     <input type="text" formControlName="company"
       [ngClass]="{ 'is-invalid': Company?.errors && Company?.touched, 'is-valid': !Company?.errors && Company?.touched}"
-      class="form-control" id="name">
+      class="form-control" id="Company">
     <div *ngIf="Company?.errors && Company?.touched">
-      <p *ngIf="Company?.hasError('required')" class="text-danger">Nombre requerida</p>
+      <p *ngIf="Company?.hasError('required')" class="text-danger">Campo requerido</p>
     </div>
   </div>
   <div class="mb-3 form-item-container">
     <label for="Description" class="form-label">Descripcion :</label>
     <input type="text" formControlName="description"
       [ngClass]="{ 'is-invalid': Description?.errors && Description?.touched, 'is-valid': !Description?.errors && Description?.touched}"
-      class="form-control" id="name">
+      class="form-control" id="Description">
     <div *ngIf="Description?.errors && Description?.touched">
       <p *ngIf="Description?.hasError('required')" class="text-danger">Campo requerido</p>
     </div>
@@ -31,24 +32,24 @@
     <label for="Mode" class="form-label">Modalidad :</label>
     <input type="text" formControlName="mode"
       [ngClass]="{ 'is-invalid': Mode?.errors && Mode?.touched, 'is-valid': !Mode?.errors && Mode?.touched}"
-      class="form-control" id="name">
+      class="form-control" id="Mode">
   </div>
   <div class="mb-3 form-item-container">
-    <label for="Year_init" class="form-label">Año de inicio :</label>
-    <input type="number" formControlName="year_init"
-      [ngClass]="{ 'is-invalid': Year_init?.errors && Year_init?.touched, 'is-valid': !Year_init?.errors && Year_init?.touched}"
-      class="form-control" id="name">
-    <div *ngIf="Year_init?.errors && Year_init?.touched">
-      <p *ngIf="Year_init?.hasError('required')" class="text-danger">Año requerido</p>
+    <label for="Date_init" class="form-label">Año de inicio :</label>
+    <input type="date" formControlName="date_init"
+      [ngClass]="{ 'is-invalid': Date_init?.errors && Date_init?.touched, 'is-valid': !Date_init?.errors && Date_init?.touched}"
+      class="form-control" id="Date_init">
+    <div *ngIf="Date_init?.errors && Date_init?.touched">
+      <p *ngIf="Date_init?.hasError('required')" class="text-danger">Año requerido</p>
     </div>
   </div>
   <div class="mb-3 form-item-container">
-    <label for="Year_end" class="form-label">Año de finalizacion :</label>
-    <input type="number" formControlName="year_end"
-      [ngClass]="{ 'is-invalid': Year_end?.errors && Year_end?.touched, 'is-valid': !Year_end?.errors && Year_end?.touched}"
-      class="form-control" id="name">
-    <div *ngIf="Year_end?.errors && Year_end?.touched">
-      <p *ngIf="Year_end?.hasError('required')" class="text-danger">Año requerido</p>
+    <label for="Date_end" class="form-label">Año de finalizacion :</label>
+    <input type="date" formControlName="date_end"
+      [ngClass]="{ 'is-invalid': Date_end?.errors && Date_end?.touched, 'is-valid': !Date_end?.errors && Date_end?.touched}"
+      class="form-control" id="Date_end">
+    <div *ngIf="Date_end?.errors && Date_end?.touched">
+      <p *ngIf="Date_end?.hasError('required')" class="text-danger">Año requerido</p>
     </div>
   </div>
   <div class="mb-3 form-item-container">
@@ -61,5 +62,8 @@
       <p *ngIf="Photo_url?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
   </div>
-  <button type="submit" class="btn btn-warning w-75">Registrar</button>
+  <button *ngIf="!id" (click)="onSend($event)" type="submit" class="btn btn-warning w-75">Registrar</button>
+  <button *ngIf="id" (click)="onUpdated($event)" type="submit" class="btn btn-warning w-75">Modificar</button>
+  <p *ngIf="response" class="text-success">Tecnologia Registrada correctamente.</p>
+  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error}}</p>
 </form>

@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginFormComponent implements OnInit {
   form:FormGroup;
   error: HttpErrorResponse | undefined;
+  response : string | undefined
 
   constructor(private formBuilder:FormBuilder, private authService:AuthService, private route:Router) {
     this.form=this.formBuilder.group(
@@ -35,15 +36,16 @@ export class LoginFormComponent implements OnInit {
 
   onSend(event:Event){
     event.preventDefault;
-    this.authService.Login(this.form.value.email, this.form.value.password).subscribe(data=>{
-      console.log('data :' + JSON.stringify(data));
-      this.route.navigate(['/portfolio']);
-    },
-    error => {
-      console.log('oops', error)
-      this.error = error;
-    }
-    )
+    this.authService.Login(this.form.value.email, this.form.value.password).subscribe({
+      next : (data) => {
+        console.log('data :' + JSON.stringify(data));
+        this.route.navigate(['/portfolio']);
+      },
+      error: (error) => {
+        console.log('oops', error)
+        this.error = error;
+      }
+    })
   }
 
   onClick(){
