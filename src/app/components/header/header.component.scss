@@ -23,3 +23,58 @@
 header div {
   z-index: 100;
 }
+
+.bar-1, .bar-2, .bar-3 {
+  width: 4vh;
+  height: 0.75vh;
+  border-radius: 1vh;
+  background-color: white;
+}
+
+.bar-close-1 {
+  width: 5vh;
+  height: 1vh;
+  border-radius: 1vh;
+  transform: rotate(-45deg) translate(-1vh, 1vh);
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
+}
+
+.bar-close-2 {
+  opacity: 0;
+}
+
+.bar-close-3 {
+  width: 5vh;
+  height: 1vh;
+  border-radius: 1vh;
+  transform: rotate(45deg) translate(-1vh, -1vh);
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
+}
+
+.navbar-toggler {
+  display: flex;
+  flex-direction: column;
+  height: 6vh;
+  padding: 2px;
+  justify-content: space-evenly;
+  outline: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+@media (min-width:710px) {
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+@media (max-width:710px) {
+  .navbar-show {
+    display: none;
+  }
+}

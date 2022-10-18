@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faUser, faCode, faBriefcase, faBook, faDisplay, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faCode, faBriefcase, faBook, faDisplay, faHouse, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -14,9 +14,16 @@ export class HeaderComponent implements OnInit {
   briefcase = faBriefcase;
   book = faBook;
   display = faDisplay;
+  bars = faBars;
+  close = faXmark;
 
 
   constructor(private router:Router) { }
+
+  isShowDivIf = true;
+  toggleDisplayDivIf() {
+    this.isShowDivIf = !this.isShowDivIf;
+  }
 
   ngOnInit(): void {
   }
