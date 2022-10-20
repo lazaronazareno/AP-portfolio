@@ -1,18 +1,18 @@
-<div *ngIf="data && profileData" class="py-3 border-bottom border-warning" id="study">
+<div *ngIf="data && profileData" class="p-3 bg-secondary" id="study">
   <div class="d-flex mb-3 justify-content-between align-items-center">
     <h1>Estudios</h1>
     <a *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
   </div>
   <div class="card-group">
-    <div *ngFor="let study of data" class="card m-2 bg-dark text-center border border-warning studies-item">
+    <div *ngFor="let study of data" class="card m-2 text-center studies-item">
       <img class="card-img-top card-img" src="{{study.photo_url}}" alt="{{study.school}}">
-      <div class="card-body">
+      <div class="card-body text-dark w-100">
         <p class="card-title fs-4">{{study.name}}</p>
         <p class="me-2 card-text">{{study.school}}</p>
         <p class="me-2 card-text">{{study.description}}</p>
         <p>{{study.date_init}} - {{study.date_end}}</p>
         <a *ngIf="isUserAuth" [routerLink]="['/studies-form', study.id]" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
-        <a *ngIf="isUserAuth" class="delete-item-button" (click)="onDelete(study)" alt="delete"><fa-icon icon="trash" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <a *ngIf="isUserAuth" class="delete-item-button" (click)="onDelete(study)" alt="delete"><fa-icon icon="trash" size="2x" [styles]="{'color': 'black'}"></fa-icon></a>
       </div>
     </div>
   </div>

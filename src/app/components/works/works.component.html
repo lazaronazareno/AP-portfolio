@@ -1,13 +1,13 @@
-<div *ngIf="data && profileData" class="py-3" id="works">
+<div *ngIf="data && profileData" class="p-3 works-container" id="works">
   <div class="d-flex mb-3 justify-content-between align-items-center">
-    <h1>Apps</h1>
+    <h1>Proyectos</h1>
     <a *ngIf="isUserAuth" [routerLink]="['/works-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
   </div>
   <div class="card-group">
-    <div *ngFor="let app of data" class="card m-2 bg-dark text-center border border-warning work-item">
+    <div *ngFor="let app of data" class="card m-2 bg-dark text-center work-item">
       <img class="card-img-top card-img" src="{{app.photo_url}}" alt="{{app.name}}">
       <div class="card-body">
-        <p class="card-title fs-5">{{app.name}}</p>
+        <p class="card-title fs-1">{{app.name}}</p>
         <p class="me-2">{{app.year_made}}</p>
         <p class="me-2">{{app.stack}}</p>
         <p class="me-2">{{app.description}}</p>

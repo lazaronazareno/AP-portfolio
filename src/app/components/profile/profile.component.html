@@ -1,6 +1,6 @@
-<div *ngIf="data" class="d-flex flex-column profile" id="profile">
-  <div class="background-image d-flex h-100 justify-content-evenly align-items-center border-bottom border-warning" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
-    <div class="profile-img d-flex flex-column align-items-center overflow-hidden justify-content-center border border-warning px-3">
+<div *ngIf="data" class="d-flex flex-column profile p-5" id="profile">
+  <div class="background-image d-flex h-100 justify-content-evenly align-items-center" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
+    <div class="profile-img d-flex flex-column align-items-center overflow-hidden justify-content-center px-3">
       <img class="img" src="{{data.photo_url}}" alt="{{data.name}}" appMissingImg>
       <h1>{{data.name + " " +data.lastName}}</h1>
     </div>

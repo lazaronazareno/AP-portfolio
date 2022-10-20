@@ -2,8 +2,13 @@
   font-family: "FuturaMedium";
 }
 
+.works-container {
+  background-color: #111111;
+}
+
 .work-item {
   min-width: 70vw;
+  border: none;
 }
 
 .card-img {
@@ -15,6 +20,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.card-title {
+  background-color: #ffa500;
+  color: black;
 }
 
 @media (min-width:950px) {
