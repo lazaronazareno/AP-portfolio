@@ -2,7 +2,31 @@
   font-family: "FuturaMedium";
 }
 
-.card-img {
-  width: 75vh;
-  height: 70vh;
+.work-item {
+  min-width: 70vw;
 }
+
+.card-img {
+  width: auto;
+  height: 50vh;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width:950px) {
+  .work-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .card-img {
+    width: auto;
+    height: 50vh;
+    max-width: 40vw;
+    min-width: 30vw;
+  }
+ }

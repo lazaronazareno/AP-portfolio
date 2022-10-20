@@ -1,4 +1,4 @@
-<div *ngIf="data && profileData" class="p-5 m-2 border-bottom border-warning" id="study">
+<div *ngIf="data && profileData" class="py-3 border-bottom border-warning" id="study">
   <div class="d-flex mb-3 justify-content-between align-items-center">
     <h1>Estudios</h1>
     <a *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
