@@ -1,0 +1,15 @@
+.top-footer {
+  justify-content: center;
+}
+
+@media (min-width:950px) {
+  .top-footer {
+    justify-content: space-evenly;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 25vw;
+  }
+}

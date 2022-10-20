@@ -1,23 +1,23 @@
-<footer *ngIf="data" class="py-2 px-5 border-top border-warning" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
-  <div class="p-2 d-flex justify-content-center">
-    <h5 class="mx-3">Secciones</h5>
-    <div class="col-2">
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="portfolio#profile" class="nav-link p-0 text-muted">Perfil</a></li>
-        <li class="nav-item mb-2"><a href="portfolio#stack" class="nav-link p-0 text-muted">Tecnologias</a></li>
-        <li class="nav-item mb-2"><a href="portfolio#experience" class="nav-link p-0 text-muted">Experiencia</a></li>
-      </ul>
+<footer *ngIf="data" class="py-2 px-2 border-top border-warning" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
+  <div class="top-footer p-2 py-3 d-flex justify-content-center">
+    <div class="footer-links">
+      <h5 >Secciones</h5>
+      <div class="">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="portfolio#profile" class="nav-link p-0 text-muted">Perfil</a></li>
+          <li class="nav-item mb-2"><a href="portfolio#stack" class="nav-link p-0 text-muted">Tecnologias</a></li>
+          <li class="nav-item mb-2"><a href="portfolio#experience" class="nav-link p-0 text-muted">Experiencia</a></li>
+        </ul>
+      </div>
+      <div class="">
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="portfolio#study" class="nav-link p-0 text-muted">Estudios</a></li>
+          <li class="nav-item mb-2"><a href="portfolio#works" class="nav-link p-0 text-muted">Proyectos</a></li>
+        </ul>
+      </div>
     </div>
 
-    <div class="col-2">
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="portfolio#study" class="nav-link p-0 text-muted">Estudios</a></li>
-        <li class="nav-item mb-2"><a href="portfolio#works" class="nav-link p-0 text-muted">Proyectos</a></li>
-        <li class="nav-item mb-2"><a [routerLink]="['/login']" class="nav-link p-0 text-muted">Ingresar</a></li>
-      </ul>
-    </div>
-
-    <div class="col-4 offset-1">
+    <div class="footer-contact mx-5">
       <form>
         <h5>Contactame</h5>
         <p>Puedes enviarme tu opinion de la pagina o por motivos laborales </p>
