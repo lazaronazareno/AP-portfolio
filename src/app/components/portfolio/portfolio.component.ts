@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class PortfolioComponent implements OnInit {
   profileData : any;
   isUserAuth : boolean = false;
+  loading : boolean = true;
 
   constructor(private portfolioService: PortfolioService, private authUser: AuthService) { }
 
@@ -19,6 +20,7 @@ export class PortfolioComponent implements OnInit {
     .subscribe(data => (
       console.log(data),
       this.profileData = data,
+      this.loading = false,
       console.log(this.profileData)
     ))
   }

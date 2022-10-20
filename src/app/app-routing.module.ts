@@ -12,11 +12,6 @@ import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
   {path:'portfolio', component:PortfolioComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
-  {path:'portfolio#profile', component:PortfolioComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
-  {path:'portfolio#stack', component:PortfolioComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
-  {path:'portfolio#experience', component:PortfolioComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
-  {path:'portfolio#studies', component:PortfolioComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
-  {path:'portfolio#works', component:PortfolioComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
   {path:'profile-form', component:ProfileFormComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
   {path:'stack-form', component:StackFormComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
   {path:'experience-form', component:ExperienceFormComponent, canActivate:[GuardGuard],runGuardsAndResolvers: 'always'},
