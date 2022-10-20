@@ -18,7 +18,10 @@ export class ProfileComponent implements OnInit, OnChanges {
   constructor(private portfolioService: PortfolioService, private authUser: AuthService) { }
 
   ngOnInit(): void {
-    if(this.authUser.UserAuthenticated && this.authUser.UserAuthenticated.token) { this.isUserAuth = true}
+    if(this.authUser.UserAuthenticated && this.authUser.UserAuthenticated.token) {
+       this.isUserAuth = true
+       this.data = this.profileData;
+      }
   }
   
   ngOnChanges(changes: SimpleChanges) {

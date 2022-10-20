@@ -39,7 +39,9 @@ export class LoginFormComponent implements OnInit {
     this.authService.Login(this.form.value.email, this.form.value.password).subscribe({
       next : (data) => {
         console.log('data :' + JSON.stringify(data));
-        this.route.navigate(['/portfolio']);
+        this.route.navigate(['/portfolio']).then(() => {
+          window.location.reload()
+        });
       },
       error: (error) => {
         console.log('oops', error)

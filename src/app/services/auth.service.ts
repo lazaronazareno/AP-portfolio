@@ -36,6 +36,10 @@ export class AuthService {
     }))
    }
 
+   Logout() {
+    sessionStorage.clear();
+   }
+
    get UserAuthenticated() {
     return this.currentUserSubject.value;
    }

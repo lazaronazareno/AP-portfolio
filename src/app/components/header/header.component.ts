@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faUser, faCode, faBriefcase, faBook, faDisplay, faHouse, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -16,15 +17,24 @@ export class HeaderComponent implements OnInit {
   display = faDisplay;
   bars = faBars;
   close = faXmark;
+  isUserAuth : boolean = false;
 
 
-  constructor(private router:Router) { }
+  constructor(private authService:AuthService, private router:Router) { }
 
   isShowDivIf = true;
   toggleDisplayDivIf() {
     this.isShowDivIf = !this.isShowDivIf;
   }
 
+  handleLogout() {
+    this.authService.Logout();
+    window.location.reload()
+  }
+
   ngOnInit(): void {
+    if(this.authService.UserAuthenticated && this.authService.UserAuthenticated.token) {
+      this.isUserAuth = true
+     }
   }
 }
