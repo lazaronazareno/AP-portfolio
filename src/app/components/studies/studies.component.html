@@ -1,7 +1,7 @@
 <div *ngIf="data && profileData" class="p-3 bg-secondary" id="study">
   <div class="d-flex mb-3 justify-content-between align-items-center">
     <h1>Estudios</h1>
-    <a *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+    <a title="study-add" *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
   </div>
   <div class="card-group">
     <div *ngFor="let study of data" class="card m-3 text-center studies-item">
@@ -11,8 +11,8 @@
         <p class="me-2 card-text">{{study.school}}</p>
         <p class="me-2 card-text">{{study.description}}</p>
         <p>{{study.date_init}} - {{study.date_end}}</p>
-        <a *ngIf="isUserAuth" [routerLink]="['/studies-form', study.id]" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
-        <a *ngIf="isUserAuth" class="delete-item-button" (click)="onDelete(study)" alt="delete"><fa-icon icon="trash" size="2x" [styles]="{'color': 'black'}"></fa-icon></a>
+        <a title="study-edit" *ngIf="isUserAuth" [routerLink]="['/studies-form', study.id]" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <a title="study-delete" *ngIf="isUserAuth" class="delete-item-button" (click)="onDelete(study)" alt="delete"><fa-icon icon="trash" size="2x" [styles]="{'color': 'black'}"></fa-icon></a>
       </div>
     </div>
   </div>
@@ -20,5 +20,5 @@
 </div>
 <div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="profileData && !data">
   <p class="fs-3 m-0">No hay estudios agregados.</p>
-  <a *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+  <a title="study-add" *ngIf="isUserAuth" [routerLink]="['/studies-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
 </div>

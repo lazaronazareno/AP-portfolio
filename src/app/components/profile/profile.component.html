@@ -13,14 +13,14 @@
       <p class="fs-5">{{data.mail}}</p>
       <p class="fs-5">{{data.about_me}}</p>
       <div class="d-flex justify-content-evenly w-75">
-        <a class="nav-link text-dark" href="{{data.repo_url}}"><fa-icon [icon]="github" size="4x" [styles]="{'color': 'orange'}"></fa-icon></a>
-        <a class="nav-link text-dark" href="{{data.linkedin_url}}"><fa-icon [icon]="linkedin" size="4x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <a title="github" class="nav-link text-dark" href="{{data.repo_url}}"><fa-icon [icon]="github" size="4x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <a title="linkedin" class="nav-link text-dark" href="{{data.linkedin_url}}"><fa-icon [icon]="linkedin" size="4x" [styles]="{'color': 'orange'}"></fa-icon></a>
       </div>
-      <a *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="edit" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+      <a title="profile-edit" *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="edit" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
     </div>
   </div>
 </div>
 <div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="!data">
   <p class="fs-3 m-0">No hay informacion del usuario disponible</p>
-  <a *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+  <a title="profile-add" *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
 </div>

@@ -4,24 +4,24 @@
       <a class="nav-link text-light text-center" [routerLink]="['/portfolio']"><fa-icon class="mx-1" [icon]="home"></fa-icon>Inicio</a>
     </div>
     <ul class="nav my-2 justify-content-center my-md-0 text-small navbar-show">
-      <li><a class="nav-link text-light text-center" href="portfolio#profile"><fa-icon class="mx-1" [icon]="user"></fa-icon>Perfil</a></li>
-      <li><a class="nav-link text-light text-center" href="portfolio#stack"><fa-icon class="mx-1" [icon]="code"></fa-icon>Tecnologias</a></li>
-      <li><a class="nav-link text-light text-center" href="portfolio#study"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
-      <li><a class="nav-link text-light text-center" href="portfolio#works"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Proyectos</a></li>
-      <li *ngIf="!isUserAuth" [routerLink]="['/login']" [routerLinkActive]="['active']"><a class="nav-link text-light ms-auto text-center active">Ingresar</a></li>
-      <li *ngIf="isUserAuth" (click)="handleLogout()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
+      <li><a title="profile" class="nav-link text-light text-center" href="portfolio#profile"><fa-icon class="mx-1" [icon]="user"></fa-icon>Perfil</a></li>
+      <li><a title="stack" class="nav-link text-light text-center" href="portfolio#stack"><fa-icon class="mx-1" [icon]="code"></fa-icon>Tecnologias</a></li>
+      <li><a title="study" class="nav-link text-light text-center" href="portfolio#study"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
+      <li><a title="works" class="nav-link text-light text-center" href="portfolio#works"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Proyectos</a></li>
+      <li *ngIf="!isUserAuth" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="login" class="nav-link text-light ms-auto text-center active">Ingresar</a></li>
+      <li *ngIf="isUserAuth" (click)="handleLogout()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="logout" class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
     </ul>
     <div (click)=toggleDisplayDivIf() class="navbar-toggler">
       <fa-icon class="text-light" *ngIf="isShowDivIf" [icon]="bars"></fa-icon>
       <fa-icon class="text-light" *ngIf="!isShowDivIf" [icon]="close"></fa-icon>
     </div>
     <ul *ngIf="!isShowDivIf" [ngClass]="!isShowDivIf ? 'responsive__active' : 'responsive__inactive'" class="nav navbar-nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-      <li (click)=toggleDisplayDivIf()><a class="nav-link text-light text-center" href="portfolio#profile"><fa-icon class="mx-1" [icon]="user"></fa-icon>Perfil</a></li>
-      <li (click)=toggleDisplayDivIf()><a class="nav-link text-light text-center" href="portfolio#stack"><fa-icon class="mx-1" [icon]="code"></fa-icon>Tecnologias</a></li>
-      <li (click)=toggleDisplayDivIf()><a class="nav-link text-light text-center" href="portfolio#study"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
-      <li (click)=toggleDisplayDivIf()><a class="nav-link text-light text-center" href="portfolio#works"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Proyectos</a></li>
-      <li *ngIf="!isUserAuth" (click)="toggleDisplayDivIf()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a class="nav-link text-light ms-auto text-center active">Ingresar</a></li>
-      <li *ngIf="isUserAuth" (click)="toggleDisplayDivIf()" (click)="handleLogout()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
+      <li (click)=toggleDisplayDivIf()><a title="profile" class="nav-link text-light text-center" href="portfolio#profile"><fa-icon class="mx-1" [icon]="user"></fa-icon>Perfil</a></li>
+      <li (click)=toggleDisplayDivIf()><a title="stack" class="nav-link text-light text-center" href="portfolio#stack"><fa-icon class="mx-1" [icon]="code"></fa-icon>Tecnologias</a></li>
+      <li (click)=toggleDisplayDivIf()><a title="study" class="nav-link text-light text-center" href="portfolio#study"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
+      <li (click)=toggleDisplayDivIf()><a title="works" class="nav-link text-light text-center" href="portfolio#works"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Proyectos</a></li>
+      <li *ngIf="!isUserAuth" (click)="toggleDisplayDivIf()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="login" class="nav-link text-light ms-auto text-center active">Ingresar</a></li>
+      <li *ngIf="isUserAuth" (click)="toggleDisplayDivIf()" (click)="handleLogout()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="logout" class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
     </ul>
   </nav>  
 <header>

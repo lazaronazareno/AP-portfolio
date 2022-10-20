@@ -11,8 +11,8 @@
         <p class="me-2 card-text">{{exps.company}}</p>
         <p class="me-2 card-text">{{exps.description}}</p>
         <p class="card-text">{{exps.mode + " - " + exps.date_init + " / " + exps.date_end}}</p>
-        <a *ngIf="isUserAuth" [routerLink]="['/experience-form', exps.id]" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
-        <a *ngIf="isUserAuth" class="delete-item-button" (click)="onDelete(exps)" alt="delete"><fa-icon icon="trash" size="2x" [styles]="{'color': 'black'}"></fa-icon></a>
+        <a title="experience-edit" *ngIf="isUserAuth" [routerLink]="['/experience-form', exps.id]" class="edit-item-button" alt="edit"><fa-icon icon="edit" size="2x" [styles]="{'color': 'orange'}"></fa-icon></a>
+        <a title="experience-delete" *ngIf="isUserAuth" class="delete-item-button" (click)="onDelete(exps)" alt="delete"><fa-icon icon="trash" size="2x" [styles]="{'color': 'black'}"></fa-icon></a>
       </div>
     </div>
     <div *ngIf="data.length === 0">No hay experiencias laborales</div>
@@ -22,5 +22,5 @@
 </div>
 <div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="profileData && !data">
   <p class="fs-3 m-0">No hay experiencias laborales.</p>
-  <a *ngIf="isUserAuth" [routerLink]="['/experience-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+  <a title="experience-add" *ngIf="isUserAuth" [routerLink]="['/experience-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
 </div>
