@@ -3,20 +3,35 @@
 }
 
 .profile {
-  height: 90vh;
   margin-top: 5vh;
 }
 
 .background-image {
   background-repeat: no-repeat;
   background-size: 100% 50%;
+  flex-direction: column;
 }
 
 .profile-img {
-  width: 15vw;
+  width: auto;
+  text-align: center;
 }
 
 .img {
-  width: 25vw;
+  width: auto;
   height: 30vh;
+}
+
+.profile__info {
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width:950px) {
+ .background-image {
+  flex-direction: row;
+ }
+ .profile__info {
+  padding: 3vh;
+ }
 }

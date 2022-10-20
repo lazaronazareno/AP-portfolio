@@ -44,13 +44,13 @@ header div {
 	        animation: slide-in-top 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@media (min-width:710px) {
+@media (min-width:766px) {
   .navbar-toggler {
     display: none;
   }
 }
 
-@media (max-width:710px) {
+@media (max-width:765px) {
   .navbar-show {
     display: none;
   }
