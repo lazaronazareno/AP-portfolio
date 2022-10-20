@@ -4,7 +4,7 @@
     <a *ngIf="isUserAuth" [routerLink]="['/experience-form']" class="edit-button" alt="add"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
   </div>
   <div class="card-group">
-    <div *ngFor="let exps of data; let i = index" [attr.data-index]="i" class="card m-2 text-center experience-item align-items-center">
+    <div *ngFor="let exps of data; let i = index" [attr.data-index]="i" class="card m-3 text-center experience-item align-items-center">
       <img class="card-img-top card-img" src="{{exps.photo_url}}" alt="{{exps.company}}">
       <div class="card-body text-dark w-100">
         <p class="card-title fs-4">{{exps.position}}</p>
