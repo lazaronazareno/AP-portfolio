@@ -5,6 +5,7 @@ import { Proyect } from 'src/app/porfolio-models';
 import { Router } from '@angular/router';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-works',
@@ -18,7 +19,8 @@ export class WorksComponent implements OnInit {
   deploy = faDesktop;
   isUserAuth : boolean = false;
   response: string | undefined;
-  error : string | undefined;
+  error : HttpErrorResponse | undefined;
+  loading : boolean = false;
 
   constructor(
     private portfolioService: PortfolioService, private authUser: AuthService, private router:Router
@@ -33,22 +35,20 @@ export class WorksComponent implements OnInit {
   }
 
   onDelete(proyect : Proyect) {
+    this.loading = true;
     this.portfolioService.deleteProyect(proyect).subscribe({
       next : (data) => {
-        console.log('experience deleted', data);
+        console.log('work deleted', data);
         this.response = data;
-        this.router.navigate([], {
-          skipLocationChange: true,
-          queryParamsHandling: 'merge'
-        })
+        this.loading = false
+        this.router.navigate(['/portfolio']).then(() => {
+          window.location.reload()
+        });
       },
       error: (error) => {
-        console.log('experience deleted failed', error);
+        console.log('delete work failed', error);
         this.error = error;
-        this.router.navigate([], {
-          skipLocationChange: true,
-          queryParamsHandling: 'merge'
-        })
+        this.loading = false
       }
     })
   }

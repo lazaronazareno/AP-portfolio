@@ -3,6 +3,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Study } from 'src/app/porfolio-models';
 import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-studies',
@@ -14,7 +15,8 @@ export class StudiesComponent implements OnInit {
   data : any;
   isUserAuth : boolean = false;
   response: string | undefined;
-  error : string | undefined;
+  error : HttpErrorResponse | undefined;
+  loading : boolean = false;
 
   constructor(
     private portfolioService: PortfolioService, private authUser: AuthService, private router:Router
@@ -29,22 +31,20 @@ export class StudiesComponent implements OnInit {
   }
 
   onDelete(study : Study) {
+    this.loading = true;
     this.portfolioService.deleteStudy(study).subscribe({
       next : (data) => {
-        console.log('experience deleted', data);
+        console.log('study deleted', data);
         this.response = data;
-        this.router.navigate([], {
-          skipLocationChange: true,
-          queryParamsHandling: 'merge'
-        })
+        this.loading = false
+        this.router.navigate(['/portfolio']).then(() => {
+          window.location.reload()
+        });
       },
       error: (error) => {
-        console.log('experience deleted failed', error);
+        console.log('delete study failed', error);
         this.error = error;
-        this.router.navigate([], {
-          skipLocationChange: true,
-          queryParamsHandling: 'merge'
-        })
+        this.loading = false
       }
     })
   }
