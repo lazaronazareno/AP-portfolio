@@ -21,5 +21,5 @@
   </div>
   <button type="submit" class="btn btn-warning w-100">Registrar</button>
   <p *ngIf="response" class="text-success">Tecnologia Registrada correctamente.</p>
-  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error}}</p>
+  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error.status}} : {{error.message}}</p>
 </form>

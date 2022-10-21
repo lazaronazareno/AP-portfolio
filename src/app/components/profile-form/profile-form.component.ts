@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,7 +15,14 @@ export class ProfileFormComponent implements OnInit {
   form : FormGroup;
   portfolioData : undefined | Person;
   response: string | undefined | Person;
-  error : string | undefined;
+  error : HttpErrorResponse | undefined;
+  loading : boolean = false;
+  profileLoading : boolean = false;
+  bgLoading : boolean = false;
+  profileImgResult : string | undefined;
+  profileImgError : HttpErrorResponse | undefined;
+  bgImgResult : string | undefined;
+  bgImgError : HttpErrorResponse | undefined;
 
   constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService,
               private portfolioService: PortfolioService, private route:Router) {
@@ -87,17 +95,20 @@ export class ProfileFormComponent implements OnInit {
     
     onSend(e:Event){
       e.preventDefault;
+      this.loading = true
       console.log(this.form.value)
       if(this.portfolioData?.name){
         this.portfolioService.putProfile(this.form.value).subscribe({
           next : (data) => {
             console.log('Data updated', data);
             this.response = data;
+            this.loading = false,
             this.route.navigate(['/portfolio']);
           },
           error: (error) => {
             console.log('data updated failed', error);
-            this.error = error;
+            this.error = error,
+            this.loading = false;
           }
         })
       } else {
@@ -105,11 +116,13 @@ export class ProfileFormComponent implements OnInit {
           next : (data) => {
             console.log('post succesfull!', data);
             this.response = data;
+            this.loading = false,
             this.route.navigate(['/portfolio']);
           },
           error: (error) => {
             console.log('post failed', error);
-            this.error = error;
+            this.error = error,
+            this.loading = false;
           }
         })
       }
@@ -117,21 +130,39 @@ export class ProfileFormComponent implements OnInit {
 
 
     handleProfileFileInput(e: Event) {
+      this.profileLoading = true;
       const input = e.target as HTMLInputElement;
       const img = input.files?.item(0);
-      this.imgbbService.uploadImg(img as File).subscribe(url => (
-        console.log(url.data.url),
-        this.form.value.photo_url = url.data.url 
-      ))
+      this.imgbbService.uploadImg(img as File).subscribe({
+        next: (url) => {
+          console.log(url.data.url),
+          this.form.value.photo_url = url.data.url,
+          this.profileImgResult = `Imagen de perfil subida correctamente`
+          this.profileLoading = false 
+        },
+        error: (error) => {
+          this.profileImgError = error
+          this.profileLoading = false 
+        },
+      })
 }
   handleBackgroundFileInput(e: Event) {
+    this.bgLoading = true;
     const input = e.target as HTMLInputElement;
     const img = input.files?.item(0);
     console.log(input.files?.item(0));
-    this.imgbbService.uploadImg(img!).subscribe(url => (
-      console.log(url.data.url),
-      this.form.value.background_url = url.data.url 
-    ))
+    this.imgbbService.uploadImg(img as File).subscribe({
+      next: (url) => {
+        console.log(url.data.url),
+        this.form.value.background_url = url.data.url,
+        this.bgImgResult = `Banner subido correctamente`
+        this.bgLoading = false 
+      },
+      error: (error) => {
+        this.bgImgError = error
+        this.bgLoading = false 
+      },
+    })
 }
 
 }

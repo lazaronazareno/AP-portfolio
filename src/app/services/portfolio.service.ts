@@ -18,7 +18,7 @@ export class PortfolioService {
   httpOptions = {
     headers: new HttpHeaders().set(
       'Authorization', this.authService.UserAuthenticated.token,
-    ).set('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, DELETE')
+    ).set('Content-Type', 'application/json')
   };
 
   getProfile(): Observable<any> {

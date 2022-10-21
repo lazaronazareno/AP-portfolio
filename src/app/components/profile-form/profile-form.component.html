@@ -99,19 +99,30 @@
     <div *ngIf="ProfileImg?.errors && ProfileImg?.touched">
       <p *ngIf="ProfileImg?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
+    <div *ngIf="profileLoading" class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p *ngIf="profileImgResult">{{profileImgResult}}</p>
   </div>
   <div class="mb-3 form-item-container">
     <label for="backgroundImg" class="form-label">Banner :</label>
     <input type="file" formControlName="background_url"
       [ngClass]="{ 'is-invalid': BackgroundImg?.errors && BackgroundImg?.touched, 'is-valid': !BackgroundImg?.errors && BackgroundImg?.touched}"
       class="form-control" id="backgroundImg"
-      (input)="handleProfileFileInput($event)"
+      (input)="handleBackgroundFileInput($event)"
       accept="image/*">
     <div *ngIf="BackgroundImg?.errors && BackgroundImg?.touched">
       <p *ngIf="BackgroundImg?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
+    <div *ngIf="bgLoading" class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p *ngIf="bgImgResult">{{bgImgResult}}</p>
   </div>
   <button type="submit" class="btn btn-warning w-75">Registrar</button>
+  <div *ngIf="loading" class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
   <p *ngIf="response" class="text-success">Registro enviado.</p>
-  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error}}</p>
+  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error.status}} : {{error.message}}</p>
 </form>

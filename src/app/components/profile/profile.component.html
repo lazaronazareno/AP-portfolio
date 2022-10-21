@@ -1,5 +1,5 @@
-<div *ngIf="data" class="d-flex flex-column profile p-5" id="profile">
-  <div class="background-image d-flex h-100 justify-content-evenly align-items-center" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
+<div *ngIf="data" class="d-flex flex-column profile p-5 background-image" id="profile" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
+  <div class="background-image d-flex justify-content-evenly align-items-center">
     <div class="profile-img d-flex flex-column align-items-center overflow-hidden justify-content-center px-3">
       <img class="img" src="{{data.photo_url}}" alt="{{data.name}}" appMissingImg>
       <h1>{{data.name + " " +data.lastName}}</h1>
@@ -20,7 +20,7 @@
     </div>
   </div>
 </div>
-<div class=" d-flex p-4 justify-content-center align-items-center" *ngIf="!data">
-  <p class="fs-3 m-0">No hay informacion del usuario disponible</p>
+<div class=" d-flex m-5 p-5 justify-content-center align-items-center" *ngIf="!data">
+  <p class="fs-3 p-5 m-0">No hay informacion del usuario disponible</p>
   <a title="profile-add" *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="square-plus" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
 </div>

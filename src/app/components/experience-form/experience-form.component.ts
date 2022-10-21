@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -13,7 +14,7 @@ import { UploadImgService } from 'src/app/services/upload-img.service';
 export class ExperienceFormComponent implements OnInit {
   form : FormGroup;
   response: string | undefined | Experience;
-  error : string | undefined;
+  error : HttpErrorResponse | undefined;
   id:null | undefined | string;
 
   constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService,

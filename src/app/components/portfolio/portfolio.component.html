@@ -1,12 +1,15 @@
-<div *ngIf="!loading">
+<div *ngIf="!loading && !error">
 <app-profile [profileData]="profileData"></app-profile>
 <app-stack [profileData]="profileData"></app-stack>
 <app-experience [profileData]="profileData"></app-experience>
 <app-studies [profileData]="profileData"></app-studies>
 <app-works [profileData]="profileData"></app-works>
 </div>
-<div *ngIf="loading" class="d-flex justify-content-center">
+<div *ngIf="loading && !error" class="d-flex justify-content-center">
   <div class="spinner-border text-warning text-center m-5 p-5 spinner" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
+</div>
+<div *ngIf="!loading && error">
+  <span>Error : {{error}}</span>
 </div>

@@ -55,4 +55,6 @@
   </div>
   <button *ngIf="!id" type="submit" (click)="onSend($event)" class="btn btn-warning w-75">Registrar</button>
   <button *ngIf="id" type="submit" (click)="onUpdated($event)" class="btn btn-warning w-75">Modificar</button>
+  <p *ngIf="response" class="text-success">Tecnologia Registrada correctamente.</p>
+  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error.status}} : {{error.message}}</p>
 </form>
