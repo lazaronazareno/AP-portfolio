@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root'
 })
 export class PortfolioService {
-  url:string = "http://localhost:8080"
+  url:string = "https://argentina-programa-back-end.herokuapp.com"
 
   constructor(
     private http : HttpClient,
