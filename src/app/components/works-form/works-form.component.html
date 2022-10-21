@@ -69,7 +69,7 @@
     </div>
     <p *ngIf="imgResponse" class="text-success">{{imgResponse}}</p>
   </div>
-  <button *ngIf="!id" (click)="onSend($event)" type="submit" class="btn btn-warning w-75">Registrar</button>
+  <button *ngIf="!id" (click)="onSend($event)" type="submit" [disabled]="!form.valid" class="btn btn-warning w-75">Registrar</button>
   <button *ngIf="id" (click)="onUpdated($event)" type="submit" class="btn btn-warning w-75">Modificar</button>
   <div *ngIf="loading" class="spinner-border text-warning" role="status">
     <span class="visually-hidden">Loading...</span>

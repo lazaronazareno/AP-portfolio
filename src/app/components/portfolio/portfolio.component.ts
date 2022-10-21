@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { catchError, throwError } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -20,9 +19,6 @@ export class PortfolioComponent implements OnInit {
   ngOnInit(): void {
     if(this.authUser.UserAuthenticated && this.authUser.UserAuthenticated.token) { this.isUserAuth = true}
     this.portfolioService.getProfile()
-    .pipe(catchError(() => {
-      return throwError(() => new Error('Algo ha salido mal'))
-    }))
     .subscribe({
       next: data => {
       console.log(data),

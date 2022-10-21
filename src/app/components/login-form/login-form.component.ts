@@ -2,7 +2,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { catchError, throwError } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -38,14 +37,11 @@ export class LoginFormComponent implements OnInit {
 
   onSend(event:Event){
     event.preventDefault;
+    this.loading = true
     this.authService.Login(this.form.value.email, this.form.value.password)
-    .pipe(catchError(() => {
-      return throwError(() => new Error('Oops! Algo ha salido mal'))
-    }))
     .subscribe({
       next : (data) => {
-        console.log('data :' + JSON.stringify(data));
-        this.loading = true
+        this.loading = false
         this.route.navigate(['/portfolio']).then(() => {
           window.location.reload()
         });
@@ -53,8 +49,6 @@ export class LoginFormComponent implements OnInit {
       error: (error) => {
         console.log('oops', error)
         this.error = error;
-      },
-      complete: () => {
         this.loading = false
       }
     })
