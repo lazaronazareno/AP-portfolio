@@ -24,6 +24,9 @@
     <p *ngIf="imgResponse" class="text-success">{{imgResponse}}</p>
   </div>
   <button type="submit" class="btn btn-warning w-100">Registrar</button>
+  <div *ngIf="loading" class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
   <p *ngIf="response" class="text-success">Tecnologia Registrada correctamente.</p>
   <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error.status}} : {{error.message}}</p>
 </form>

@@ -1,4 +1,4 @@
-<form [formGroup]="form" class="m-3 mt-5 d-flex flex-wrap justify-content-evenly">
+<form [formGroup]="form" class="m-5 pt-5 d-flex flex-wrap justify-content-evenly">
   <p *ngIf="!id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Agregar Experiencia</p>
   <p *ngIf="id" class="mx-5 fs-5 border-bottom border-warning w-100 text-center">Modificar Experiencia #{{id}}</p>
   <div class="mb-3 form-item-container">
@@ -68,6 +68,9 @@
   </div>
   <button *ngIf="!id" (click)="onSend($event)" type="submit" class="btn btn-warning w-75">Registrar</button>
   <button *ngIf="id" (click)="onUpdated($event)" type="submit" class="btn btn-warning w-75">Modificar</button>
+  <div *ngIf="loading" class="spinner-border text-warning" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
   <p *ngIf="response" class="text-success">Tecnologia Registrada correctamente.</p>
   <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error.status}} : {{error.message}}</p>
 </form>

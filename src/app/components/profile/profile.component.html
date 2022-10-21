@@ -1,5 +1,5 @@
 <div *ngIf="data" class="d-flex flex-column profile p-5 background-image" id="profile" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
-  <div class="background-image d-flex justify-content-evenly align-items-center">
+  <div class="background-image glass d-flex justify-content-evenly align-items-center">
     <div class="profile-img d-flex flex-column align-items-center overflow-hidden justify-content-center px-3">
       <img class="img" src="{{data.photo_url}}" alt="{{data.name}}" appMissingImg>
       <h1>{{data.name + " " +data.lastName}}</h1>
@@ -16,7 +16,7 @@
         <a title="github" class="nav-link text-dark" href="{{data.repo_url}}"><fa-icon [icon]="github" size="4x" [styles]="{'color': 'orange'}"></fa-icon></a>
         <a title="linkedin" class="nav-link text-dark" href="{{data.linkedin_url}}"><fa-icon [icon]="linkedin" size="4x" [styles]="{'color': 'orange'}"></fa-icon></a>
       </div>
-      <a title="profile-edit" *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="edit" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
+      <a title="profile-edit" style="top : 2vh" *ngIf="isUserAuth" [routerLink]="['/profile-form']" class="edit-button"><fa-icon icon="edit" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a>
     </div>
   </div>
 </div>
