@@ -18,7 +18,7 @@
     <div *ngIf="Img?.errors && Img?.touched">
       <p *ngIf="Img?.hasError('required')" class="text-danger">El archivo es requerido</p>
     </div>
-    <div *ngIf="loading" class="spinner-border text-warning" role="status">
+    <div *ngIf="imgLoading" class="spinner-border text-warning" role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
     <p *ngIf="imgResponse" class="text-success">{{imgResponse}}</p>

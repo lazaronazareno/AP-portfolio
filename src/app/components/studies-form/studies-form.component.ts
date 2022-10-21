@@ -13,9 +13,14 @@ import { UploadImgService } from 'src/app/services/upload-img.service';
 })
 export class StudiesFormComponent implements OnInit {
   form : FormGroup;
+  loading : boolean = false;
   response: string | undefined | Study;
   error : HttpErrorResponse | undefined;
   id:null | undefined | string;
+
+  imgLoading : boolean = false;
+  imgResponse: string | undefined;
+  imgError : HttpErrorResponse | undefined;
 
   constructor(private formbuilder : FormBuilder, private imgbbService:UploadImgService,
     private portfolioService : PortfolioService, private route:Router, private actRoute : ActivatedRoute) {
@@ -38,44 +43,59 @@ export class StudiesFormComponent implements OnInit {
 
   onSend(e:Event){
     e.preventDefault;
+    this.loading = true;
     console.log(this.form)
     this.portfolioService.postStudy(this.form.value).subscribe({
       next : (data) => {
         console.log('post study', data);
         this.response = data;
+        this.loading = false;
         this.route.navigate(['/portfolio']);
       },
       error: (error) => {
         console.log('post study failed', error);
         this.error = error;
+        this.loading = false;
       }
     })
   }
 
   onUpdated(e:Event) {
     e.preventDefault;
+    this.loading = true;
     console.log(this.form)
     this.portfolioService.putStudy(this.id, this.form.value).subscribe({
       next : (data) => {
         console.log('study updated', data);
         this.response = data;
+        this.loading = false;
         this.route.navigate(['/portfolio']);
       },
       error: (error) => {
         console.log('study updated failed', error);
         this.error = error;
+        this.loading = false;
       }
     })
   }
 
   handleFileInput(e: Event) {
+    this.imgLoading = true;
     const input = e.target as HTMLInputElement;
     const img = input.files?.item(0);
     console.log(input.files?.item(0));
-    this.imgbbService.uploadImg(img!).subscribe(url => (
-      console.log(url.data.url),
-      this.form.value.photo_url = url.data.url 
-    ))
+    this.imgbbService.uploadImg(img as File).subscribe({
+      next: (url) => {
+        console.log(url.data.url),
+        this.form.value.photo_url = url.data.url 
+        this.imgResponse = `Imagen subida correctamente`
+        this.imgLoading = false;
+      },
+      error: (error) => {
+        this.imgError = error
+        this.imgLoading = false;
+      },
+    })
   }
 
   get Name() {
