@@ -12,4 +12,12 @@
 .stack-item{
   height: 10vh;
   width: auto;
+  position: relative;
+}
+
+.delete-stack-button {
+  position: absolute;
+  bottom: -1vh;
+  right: 0;
+  cursor: pointer;
 }
