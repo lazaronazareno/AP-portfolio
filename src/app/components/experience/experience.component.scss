@@ -10,3 +10,9 @@
 .card-body {
   background-color: #ffa500;
 }
+
+@media (min-width:950px) {
+  #experience {
+    padding: 2rem 4rem!important;
+  }
+ }
