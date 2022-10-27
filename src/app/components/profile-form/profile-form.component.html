@@ -120,9 +120,11 @@
     <p *ngIf="bgImgResult" class="text-success">{{bgImgResult}}</p>
   </div>
   <button type="submit" class="btn btn-warning w-75">Registrar</button>
-  <div *ngIf="loading" class="spinner-border text-warning" role="status">
-    <span class="visually-hidden">Loading...</span>
+  <div class="w-100">
+    <div *ngIf="loading" class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+    <p *ngIf="response" class="text-success">Registro enviado.</p>
+    <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error.status}} : {{error.message}}</p>
   </div>
-  <p *ngIf="response" class="text-success">Registro enviado.</p>
-  <p *ngIf="error" class="text-danger">Ha ocurrido un error : {{error.status}} : {{error.message}}</p>
 </form>

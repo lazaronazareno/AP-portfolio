@@ -9,6 +9,6 @@ export class MissingImgDirective {
 
   @HostListener('error')
   private onError() {
-    this.el.nativeElement.src = 'https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg';
+    this.el.nativeElement.src = 'https://i.ibb.co/VHRWcgt/not-found-image-15383864787lu.jpg';
   }
 }
