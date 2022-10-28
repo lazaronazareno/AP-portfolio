@@ -10,6 +10,7 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
-<div *ngIf="error" class="m-5 p-5">
+<div *ngIf="!loading && error" class="m-5 p-5">
   <span>Ha ocurrido un error : {{error.status}} - {{error.message}}</span>
+  <span *ngIf="error.status === 0">Intente recargando.</span>
 </div>
