@@ -55,14 +55,14 @@ header div {
 	        animation: slide-in-top 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@media (min-width:766px) {
+@media (min-width:885px) {
   .navbar-toggler {
     display: none;
   }
 }
 
-@media (max-width:765px) {
-  .navbar-show {
+@media (max-width:884px) {
+  .navbar-show, .ap-logo {
     display: none;
   }
 }
