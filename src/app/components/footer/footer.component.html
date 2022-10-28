@@ -1,15 +1,15 @@
-<footer *ngIf="data" class="py-2 px-2 border-top border-warning" [ngStyle]="{'background-image': 'url(' + data.background_url + ')'}">
+<footer class="py-2 px-2 border-top border-warning" [ngStyle]="data && {'background-image': 'url(' + data.background_url + ');'}">
   <div class="top-footer p-2 py-3 d-flex justify-content-center">
     <div class="footer-links">
       <h5 >Secciones</h5>
-      <div class="">
+      <div>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a title="profile" href="portfolio#profile" class="nav-link p-0 text-muted">Perfil</a></li>
           <li class="nav-item mb-2"><a title="stack" href="portfolio#stack" class="nav-link p-0 text-muted">Tecnologias</a></li>
           <li class="nav-item mb-2"><a title="experience" href="portfolio#experience" class="nav-link p-0 text-muted">Experiencia</a></li>
         </ul>
       </div>
-      <div class="">
+      <div>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a title="study" href="portfolio#study" class="nav-link p-0 text-muted">Estudios</a></li>
           <li class="nav-item mb-2"><a title="works" href="portfolio#works" class="nav-link p-0 text-muted">Proyectos</a></li>
@@ -37,11 +37,3 @@
     </ul>
   </div>
 </footer>
-
-<div *ngIf="!data" class="d-flex justify-content-between pt-4 px-2 border-top border-warning align-items-center bg-black">
-  <p>© 2022 Argentina Programa, Todos los derechos reservados.</p>
-  <ul class="list-unstyled d-flex">
-    <li class="ms-3"><a title="github" class="nav-link text-dark" href="https://github.com"><fa-icon [icon]="github" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
-    <li class="ms-3"><a title="linkedin" class="nav-link text-dark" href="https://linkedin.com"><fa-icon [icon]="linkedin" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
-  </ul>
-</div>

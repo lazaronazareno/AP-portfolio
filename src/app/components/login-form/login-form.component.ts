@@ -47,7 +47,6 @@ export class LoginFormComponent implements OnInit {
         });
       },
       error: (error) => {
-        console.log('oops', error)
         this.error = error;
         this.loading = false
       }

@@ -47,16 +47,13 @@ export class StackFormComponent implements OnInit {
   onSend(e:Event){
     e.preventDefault;
     this.loading = true;
-    console.log(this.form)
     this.portfolioService.postStack(this.form.value).subscribe({
       next : (data) => {
-        console.log('post stack successfull', data);
         this.response = data;
         this.loading = false;
-        this.route.navigate(['/portfolio']);
+        this.route.navigate(['/']);
       },
       error: (error) => {
-        console.log('stack post failed', error);
         this.error = error;
         this.loading = false;
       }
@@ -69,7 +66,6 @@ export class StackFormComponent implements OnInit {
     const img = input.files?.item(0);
     this.imgbbService.uploadImg(img as File).subscribe({
       next: (url) => {
-        console.log(url.data.url),
         this.form.value.photo_url = url.data.url 
         this.imgResponse = `Imagen subida correctamente`
         this.imgLoading = false;

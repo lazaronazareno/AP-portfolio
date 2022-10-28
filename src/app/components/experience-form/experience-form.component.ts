@@ -39,22 +39,18 @@ export class ExperienceFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.actRoute.snapshot.paramMap.get('id')
-    console.log('id',this.id)
   }
 
   onSend(e:Event){
     e.preventDefault;
     this.loading = true;
-    console.log(this.form)
     this.portfolioService.postExperience(this.form.value).subscribe({
       next : (data) => {
-        console.log('post experience', data);
         this.response = data;
         this.loading = false;
-        this.route.navigate(['/portfolio']);
+        this.route.navigate(['/']);
       },
       error: (error) => {
-        console.log('post experience failed', error);
         this.error = error;
         this.loading = false;
       }
@@ -64,16 +60,13 @@ export class ExperienceFormComponent implements OnInit {
   onUpdated(e:Event) {
     e.preventDefault;
     this.loading = true;
-    console.log(this.form)
     this.portfolioService.putExperience(this.id, this.form.value).subscribe({
       next : (data) => {
-        console.log('experience updated', data);
         this.response = data;
         this.loading = false;
-        this.route.navigate(['/portfolio']);
+        this.route.navigate(['/']);
       },
       error: (error) => {
-        console.log('experience updated failed', error);
         this.error = error;
         this.loading = false;
       }
@@ -84,10 +77,8 @@ export class ExperienceFormComponent implements OnInit {
     this.imgLoading = true;
     const input = e.target as HTMLInputElement;
     const img = input.files?.item(0);
-    console.log(input.files?.item(0));
     this.imgbbService.uploadImg(img as File).subscribe({
       next: (url) => {
-        console.log(url.data.url),
         this.form.value.photo_url = url.data.url 
         this.imgResponse = `Imagen subida correctamente`
         this.imgLoading = false;

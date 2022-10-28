@@ -34,15 +34,13 @@ export class StudiesComponent implements OnInit {
     this.loading = true;
     this.portfolioService.deleteStudy(study).subscribe({
       next : (data) => {
-        console.log('study deleted', data);
         this.response = data;
         this.loading = false
-        this.router.navigate(['/portfolio']).then(() => {
+        this.router.navigate(['/']).then(() => {
           window.location.reload()
         });
       },
       error: (error) => {
-        console.log('delete study failed', error);
         this.error = error;
         this.loading = false
       }

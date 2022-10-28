@@ -25,7 +25,6 @@ export class ProfileComponent implements OnInit, OnChanges {
   }
   
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes)
     this.data = this.profileData;
   }
 

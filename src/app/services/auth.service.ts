@@ -15,7 +15,6 @@ export class AuthService {
   serverSideError : string | undefined;
 
   constructor(private http:HttpClient) {
-    console.log("auth service running")
     this.currentUserSubject= new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'))
    }
 
@@ -23,8 +22,6 @@ export class AuthService {
     return this.http.post(this.url + '/authenticate', {email: email, password:password}).pipe(map(data=>{
 
       sessionStorage.setItem('currentUser', JSON.stringify(data));
-      console.log(this.currentUserSubject)
-      console.log(JSON.stringify(this.currentUserSubject))
       this.currentUserSubject.next(data)
       return data;
       

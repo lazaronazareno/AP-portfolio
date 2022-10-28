@@ -21,11 +21,9 @@ export class PortfolioComponent implements OnInit {
     this.portfolioService.getProfile()
     .subscribe({
       next: data => {
-      console.log(data),
       this.profileData = data,
       this.loading = false,
-      this.error = undefined,
-      console.log(this.profileData)
+      this.error = undefined
       },
       error: error => {
         this.error = error

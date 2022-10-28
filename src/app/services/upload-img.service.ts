@@ -24,7 +24,6 @@ export class UploadImgService {
     formData.append('image', file);
     
     return this.httpclient.post(this.url + '/upload', formData, this.httpOptions).pipe(map(data=>{
-      console.log(data);
       return data;
       })
     );

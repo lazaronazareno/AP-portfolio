@@ -87,26 +87,21 @@ export class ProfileFormComponent implements OnInit {
     
     ngOnInit(): void {
       this.portfolioService.getProfile().subscribe(data => (
-        this.portfolioData = data,
-        console.log(this.portfolioData),
-        console.log(this.portfolioData?.name)
+        this.portfolioData = data
       ))
     }
     
     onSend(e:Event){
       e.preventDefault;
       this.loading = true
-      console.log(this.form.value)
       if(this.portfolioData?.name){
         this.portfolioService.putProfile(this.form.value).subscribe({
           next : (data) => {
-            console.log('Data updated', data);
             this.response = data;
             this.loading = false,
-            this.route.navigate(['/portfolio']);
+            this.route.navigate(['/']);
           },
           error: (error) => {
-            console.log('data updated failed', error);
             this.error = error,
             this.loading = false;
           }
@@ -114,13 +109,11 @@ export class ProfileFormComponent implements OnInit {
       } else {
         this.portfolioService.postProfile(this.form.value).subscribe({
           next : (data) => {
-            console.log('post succesfull!', data);
             this.response = data;
             this.loading = false,
-            this.route.navigate(['/portfolio']);
+            this.route.navigate(['/']);
           },
           error: (error) => {
-            console.log('post failed', error);
             this.error = error,
             this.loading = false;
           }
@@ -135,7 +128,6 @@ export class ProfileFormComponent implements OnInit {
       const img = input.files?.item(0);
       this.imgbbService.uploadImg(img as File).subscribe({
         next: (url) => {
-          console.log(url.data.url),
           this.form.value.photo_url = url.data.url,
           this.profileImgResult = `Imagen de perfil subida correctamente`
           this.profileLoading = false 
@@ -150,10 +142,8 @@ export class ProfileFormComponent implements OnInit {
     this.bgLoading = true;
     const input = e.target as HTMLInputElement;
     const img = input.files?.item(0);
-    console.log(input.files?.item(0));
     this.imgbbService.uploadImg(img as File).subscribe({
       next: (url) => {
-        console.log(url.data.url),
         this.form.value.background_url = url.data.url,
         this.bgImgResult = `Banner subido correctamente`
         this.bgLoading = false 

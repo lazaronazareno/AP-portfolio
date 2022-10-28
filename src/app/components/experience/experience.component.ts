@@ -35,15 +35,13 @@ export class ExperienceComponent implements OnInit {
     this.loading = true;
     this.portfolioService.deleteExperience(experience).subscribe({
       next : (data) => {
-        console.log('experience deleted', data);
         this.response = data;
         this.loading = false
-        this.router.navigate(['/portfolio']).then(() => {
+        this.router.navigate(['/']).then(() => {
           window.location.reload()
         });
       },
       error: (error) => {
-        console.log('delete experience failed', error);
         this.error = error;
         this.loading = false
       }

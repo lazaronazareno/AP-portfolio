@@ -35,7 +35,6 @@ export class RegisterComponent implements OnInit {
   onSend(event:Event){
     event.preventDefault;
     this.authService.Register(this.registerForm.value.email, this.registerForm.value.password).subscribe(data=>{
-      console.log('data :' + JSON.stringify(data));
       this.route.navigate(['/login']);
     })
   }

@@ -38,15 +38,13 @@ export class WorksComponent implements OnInit {
     this.loading = true;
     this.portfolioService.deleteProyect(proyect).subscribe({
       next : (data) => {
-        console.log('work deleted', data);
         this.response = data;
         this.loading = false
-        this.router.navigate(['/portfolio']).then(() => {
+        this.router.navigate(['/']).then(() => {
           window.location.reload()
         });
       },
       error: (error) => {
-        console.log('delete work failed', error);
         this.error = error;
         this.loading = false
       }
