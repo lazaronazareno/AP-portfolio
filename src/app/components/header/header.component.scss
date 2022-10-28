@@ -19,6 +19,7 @@
 .active {
   background-color: orange;
   color: black!important;
+  border-radius: 8px;
   &:focus{
     color: none;
   }

@@ -9,7 +9,7 @@
       <li><a title="study" class="nav-link text-light text-center" href="#study"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
       <li><a title="works" class="nav-link text-light text-center" href="#works"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Proyectos</a></li>
       <li *ngIf="!isUserAuth" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="login" class="nav-link text-light ms-auto text-center active">Ingresar</a></li>
-      <li *ngIf="isUserAuth" (click)="handleLogout()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="logout" class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
+      <li *ngIf="isUserAuth" (click)="handleLogout()" [routerLink]="['/']" [routerLinkActive]="['active']"><a title="logout" class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
     </ul>
     <div (click)=toggleDisplayDivIf() class="navbar-toggler">
       <fa-icon class="text-light" *ngIf="isShowDivIf" [icon]="bars"></fa-icon>
@@ -21,7 +21,7 @@
       <li (click)=toggleDisplayDivIf()><a title="study" class="nav-link text-light text-center" href="#study"><fa-icon class="mx-1" [icon]="book"></fa-icon>Estudios</a></li>
       <li (click)=toggleDisplayDivIf()><a title="works" class="nav-link text-light text-center" href="#works"><fa-icon class="mx-1" [icon]="briefcase"></fa-icon>Proyectos</a></li>
       <li *ngIf="!isUserAuth" (click)="toggleDisplayDivIf()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="login" class="nav-link text-light ms-auto text-center active">Ingresar</a></li>
-      <li *ngIf="isUserAuth" (click)="toggleDisplayDivIf()" (click)="handleLogout()" [routerLink]="['/login']" [routerLinkActive]="['active']"><a title="logout" class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
+      <li *ngIf="isUserAuth" (click)="toggleDisplayDivIf()" (click)="handleLogout()" [routerLink]="['/']" [routerLinkActive]="['active']"><a title="logout" class="nav-link text-light ms-auto text-center active">Cerrar Sesion</a></li>
     </ul>
   </nav>  
 <header>

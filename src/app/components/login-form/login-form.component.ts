@@ -42,7 +42,7 @@ export class LoginFormComponent implements OnInit {
     .subscribe({
       next : (data) => {
         this.loading = false
-        this.route.navigate(['/portfolio']).then(() => {
+        this.route.navigate(['/']).then(() => {
           window.location.reload()
         });
       },
