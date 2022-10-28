@@ -26,7 +26,6 @@ export class PortfolioComponent implements OnInit {
       this.loading = false
       },
       error: error => {
-        console.log(error)
         this.error = error
       },
     })
