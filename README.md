@@ -12,10 +12,10 @@ Repositorio : https://github.com/lazaronazareno/APportfolioAPI
 
 # Screenshots
 
-## Desktop
+## Mobile
 ![Alt Text](https://i.ibb.co/JyVKbK1/argprograma-desktop.webp)
 
-## Mobile
+## Desktop
 ![Alt Text](https://i.ibb.co/DK9QFN2/argprograma-mobile.webp)
 
 # Argentina Programa
