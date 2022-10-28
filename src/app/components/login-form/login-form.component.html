@@ -26,5 +26,5 @@
       <span class="visually-hidden">Loading...</span>
     </div>
   </div>
-  <p class="m-3 fs-4 text-danger" *ngIf="error">Error {{error.status}} : {{error.message}}</p>
+  <p class="m-3 fs-4 text-danger" *ngIf="error">Error {{error.status}} : {{error.error.errors ? error.error.errors : error.message}}</p>
 </form>
