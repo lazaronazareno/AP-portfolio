@@ -26,6 +26,7 @@ import { WorksFormComponent } from './components/works-form/works-form.component
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { MissingImgDirective } from './missing-img.directive';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { MissingImgDirective } from './missing-img.directive';
     StudiesFormComponent,
     WorksFormComponent,
     FooterComponent,
-    MissingImgDirective
+    MissingImgDirective,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

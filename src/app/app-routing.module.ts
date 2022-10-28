@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExperienceFormComponent } from './components/experience-form/experience-form.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ProfileFormComponent } from './components/profile-form/profile-form.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -11,7 +12,7 @@ import { WorksFormComponent } from './components/works-form/works-form.component
 import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
-  {path:'portfolio', component:PortfolioComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
+  {path:'', component:PortfolioComponent, runGuardsAndResolvers: 'always'},
   {path:'profile-form', component:ProfileFormComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
   {path:'stack-form', component:StackFormComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
   {path:'experience-form', component:ExperienceFormComponent, canActivate:[GuardGuard],runGuardsAndResolvers: 'always'},
@@ -22,7 +23,7 @@ const routes: Routes = [
   {path:'works-form/:id', component:WorksFormComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always'},
   {path:'login', component:LoginFormComponent, runGuardsAndResolvers: 'always'},
   {path:'register', component:RegisterComponent, canActivate:[GuardGuard], runGuardsAndResolvers: 'always' },
-  {path:'', redirectTo:'login', pathMatch:'full'}
+  {path: '**', pathMatch: 'full', component: NotfoundComponent },
 ];
 
 @NgModule({
