@@ -30,10 +30,15 @@
   </div>
 
   <div class="d-flex justify-content-between pt-4 border-top border-warning align-items-center">
-    <p>© 2022 Argentina Programa, Todos los derechos reservados.</p>
+    <div class="d-flex align-items-center">
+      <a title="argentina-programa" href="https://test.argentinaprograma.inti.gob.ar/">
+        <img alt="argentina-programa-logo" src="https://i.ibb.co/0sjtpFJ/Dise-o-sin-t-tulo-15-1.png">
+      </a>
+      <span>Portfolio, Lazaro Vega Sanchez. 2022</span>
+    </div>
     <ul class="list-unstyled d-flex">
-      <li class="ms-3"><a title="github" class="nav-link text-dark" href="https://github.com"><fa-icon [icon]="github" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
-      <li class="ms-3"><a title="linkedin" class="nav-link text-dark" href="https://linkedin.com"><fa-icon [icon]="linkedin" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
+      <li class="ms-3"><a title="github" class="nav-link text-dark" href="{{data ? data.github_url : 'https://github.com'}}"><fa-icon [icon]="github" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
+      <li class="ms-3"><a title="linkedin" class="nav-link text-dark" href="{{data ? data.linkedin_url : 'https://linkedin.com'}}"><fa-icon [icon]="linkedin" size="3x" [styles]="{'color': 'orange'}"></fa-icon></a></li>
     </ul>
   </div>
 </footer>
