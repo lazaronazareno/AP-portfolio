@@ -2,7 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ProfileComponent } from '../profile/profile.component';
-import { Stack } from 'src/app/porfolio-models';
+import { Person, Stack } from 'src/app/porfolio-models';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 @Component({
@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
   providers : [ProfileComponent]
 })
 export class StackComponent implements OnInit {
-  data:any;
-  @Input() profileData:any;
+  data! : Stack[];
+  @Input() profileData! : Person;
   isUserAuth : boolean = false;
   loading : boolean = false;
   response: string | undefined;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Person } from 'src/app/porfolio-models';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,8 +10,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent implements OnInit {
-  profileData : any;
-  error : HttpErrorResponse | undefined;
+  profileData! : Person;
+  error! : HttpErrorResponse;
   isUserAuth : boolean = false;
   loading : boolean = true;
 
@@ -22,10 +23,10 @@ export class PortfolioComponent implements OnInit {
     .subscribe({
       next: data => {
       this.profileData = data,
-      this.loading = false,
-      this.error = undefined
+      this.loading = false
       },
       error: error => {
+        console.log(error)
         this.error = error
       },
     })

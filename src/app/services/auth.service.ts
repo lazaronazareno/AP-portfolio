@@ -11,8 +11,8 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   url= environment.backendUrl;
   currentUserSubject: BehaviorSubject<any>;
-  clientSideError : string | undefined;
-  serverSideError : string | undefined;
+  clientSideError! : string;
+  serverSideError! : string;
 
   constructor(private http:HttpClient) {
     this.currentUserSubject= new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'))

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { Proyect } from 'src/app/porfolio-models';
+import { Person, Proyect } from 'src/app/porfolio-models';
 import { Router } from '@angular/router';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
@@ -13,13 +13,13 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent implements OnInit {
-  @Input() profileData :any;
-  data : any;
+  @Input() profileData! : Person;
+  data! : Proyect[];
   github = faGithub;
   deploy = faDesktop;
   isUserAuth : boolean = false;
-  response: string | undefined;
-  error : HttpErrorResponse | undefined;
+  response!: string;
+  error! : HttpErrorResponse;
   loading : boolean = false;
 
   constructor(

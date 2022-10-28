@@ -1,6 +1,7 @@
 export interface Person {
   name: string,
   lastName:string,
+  birth:string,
   nationality:string,
   tel?:number,
   address?:string,
@@ -28,21 +29,23 @@ export interface Experience {
 export interface Stack {
   id:number,
   name: string,
-  img: string
+  photo_url: string
 }
 
 export interface Study {
   id:number,
   name: string,
+  description: string,
   school: string,
   photo_url: string,
-  year_init: Date,
-  year_end: Date,
+  date_init: Date,
+  date_end: Date,
 }
 
 export interface Proyect {
   id:number,
   name:string,
+  stack:string,
   description:string,
   year_made:Date,
   photo_url:string,

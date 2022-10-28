@@ -22,7 +22,7 @@ export class PortfolioService {
     ).set('Content-Type', 'application/json')
   };
 
-  getProfile(): Observable<any> {
+  getProfile(): Observable<Person> {
     return this.http.get<Person>(this.url + '/person', this.httpOptions)
   }
 

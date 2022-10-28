@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
+import { Person } from 'src/app/porfolio-models';
 
 @Component({
   selector: 'app-profile',
@@ -9,8 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit, OnChanges {
-  @Input() profileData :any;
-  data : any;
+  @Input() profileData! : Person;
+  data! : Person;
   github = faGithub;
   linkedin = faLinkedin;
   isUserAuth : boolean = false;

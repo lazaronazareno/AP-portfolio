@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { Experience } from 'src/app/porfolio-models';
+import { Experience, Person } from 'src/app/porfolio-models';
 import { Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -11,8 +11,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent implements OnInit {
-  @Input() profileData :any;
-  data : any;
+  @Input() profileData! : Person;
+  data! : Experience[];
   isUserAuth : boolean = false;
   response: string | undefined;
   error : HttpErrorResponse | undefined;

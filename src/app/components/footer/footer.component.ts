@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Person } from 'src/app/porfolio-models';
 
 @Component({
   selector: 'app-footer',
@@ -9,8 +10,8 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  data : any;
-  error : HttpErrorResponse | undefined;
+  data! : Person;
+  error! : HttpErrorResponse;
   github = faGithub;
   linkedin = faLinkedin;
 
