@@ -1,13 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UploadImgService {
-  private readonly url : string = 'https://api.imgbb.com/1';
-  private readonly key : string = '60c12101d0e954516af4b57d07ac45cd';
+  private readonly url : string = environment.imgdbUrl;
+  private readonly key : string = environment.imgdbKey;
 
   httpOptions = {
     headers: new HttpHeaders().set('X-Skip-Interceptor', ''),

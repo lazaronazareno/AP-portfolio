@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  imgdbUrl: 'https://api.imgbb.com/1',
+  imgdbKey: '60c12101d0e954516af4b57d07ac45cd',
+  backendUrl : 'https://argentina-programa-back-end.herokuapp.com'
 };
 
 /*

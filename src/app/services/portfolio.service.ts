@@ -3,12 +3,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Experience, Person, Proyect, Stack, Study } from '../porfolio-models';
 import { AuthService } from './auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortfolioService {
-  url:string = "https://argentina-programa-back-end.herokuapp.com"
+  url:string = environment.backendUrl
 
   constructor(
     private http : HttpClient,
